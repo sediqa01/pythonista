@@ -12,13 +12,29 @@ const NavBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link1">Create Post</Nav.Link>
-                <Nav.Link href="#link2">Meetup</Nav.Link>
-                <NavDropdown title="Profile" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                <Nav.Link>
+                <i class="fa-solid fa-house"></i> Home
+                </Nav.Link>
+                {/* <Nav.Link>
+                <i class="fa-solid fa-square-plus"></i> Create Post
+                </Nav.Link>
+                <Nav.Link>
+                <i class="fa-solid fa-calendar-days"></i> Meetup
+                </Nav.Link> */}
+                <NavDropdown
+                    title={
+                      <span>
+                          <i className="fas fa-user-alt ml-5"></i>
+                      </span>
+                    }
+                    id="basic-nav-dropdown">
+                    <NavDropdown.Item>
+                    <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                    </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item>
+                    <i class="fa-solid fa-user-plus"></i> Sign Up
+                    </NavDropdown.Item>
                 </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
