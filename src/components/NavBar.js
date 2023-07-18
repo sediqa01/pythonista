@@ -5,7 +5,10 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="md" fixed='top'>
         <Container>
-            <Navbar.Brand href="#home">Pythonista</Navbar.Brand>
+            <Navbar.Brand>
+              <i className="fa-solid fa-code" aria-hidden="true"></i>
+              <span> Pythonista</span>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
