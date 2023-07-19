@@ -3,3 +3,10 @@
   background-color: #F6F6F6;
   min-height: 100vh;
 }
+* {
+  box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: none;
+}
