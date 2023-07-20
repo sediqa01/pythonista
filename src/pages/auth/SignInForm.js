@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "../../styles/Registaration.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 import {
   Form,
   Button,
@@ -18,15 +19,31 @@ function SignInForm() {
       password: "",
     });
     const { username, password } = signInData;
+    const history = useHistory();
 
     const handleChange = (event) => {
       setSignInData({
-        /* spread previous signInData so only the relevant attribute is updated */
+        /* split out earlier signup information so that just the pertinent characteristic is updated */
         ...signInData,
         /* create key: value pair of name: value */
         [event.target.name]: event.target.value,
       });
     };
+
+    const handleSubmit = async (event) => {
+        /* prevent the page from refreshing */
+        event.preventDefault();
+        try {
+          /* include the signInData supplied and reroute to the URL */
+          const { data } = await axios.post("dj-rest-auth/login/", signInData);
+          setCurrentUser(data.user);
+          setTokenTimestamp(data);
+          history.goBack();
+        } catch (err) {
+          /* optional chaining (?) to check if there is a an error response */
+          setErrors(err.response?.data);
+        }
+      };
   
 
   return (
@@ -34,7 +51,7 @@ function SignInForm() {
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
