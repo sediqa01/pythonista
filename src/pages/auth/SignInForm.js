@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Registaration.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -9,12 +9,25 @@ import {
   Col,
   Row,
   Container,
-  Alert,
   Image
 } from "react-bootstrap";
 
 function SignInForm() {
-//   Add your component logic here
+    const [signInData, setSignInData] = useState({
+      username: "",
+      password: "",
+    });
+    const { username, password } = signInData;
+
+    const handleChange = (event) => {
+      setSignInData({
+        /* spread previous signInData so only the relevant attribute is updated */
+        ...signInData,
+        /* create key: value pair of name: value */
+        [event.target.name]: event.target.value,
+      });
+    };
+  
 
   return (
     <Row className={styles.Row}>
@@ -29,6 +42,9 @@ function SignInForm() {
                 type="text"
                 placeholder="Username"
                 name="username"
+                value={username}
+                onChange={handleChange}
+
               />
             </Form.Group>
             <Form.Group controlId="password">
@@ -38,6 +54,8 @@ function SignInForm() {
                 type="password"
                 placeholder="Password"
                 name="password"
+                value={password}
+                onChange={handleChange}
               />
             </Form.Group>
            
@@ -62,7 +80,7 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://res.cloudinary.com/drpij1z8t/image/upload/v1689872400/signin_img_nhb84j.png"}
+          src={"https://res.cloudinary.com/drpij1z8t/image/upload/v1689891014/signin_img_muiztv.png"}
         />
       </Col>
     </Row>
