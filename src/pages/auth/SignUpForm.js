@@ -129,7 +129,7 @@ import {
         <Image
           className={`${appStyles.FillerImage}`}
           src={
-            "https://res.cloudinary.com/drpij1z8t/image/upload/v1689872402/signup_img_mfk6ig.jpg"
+            "https://res.cloudinary.com/drpij1z8t/image/upload/v1689890406/signup_img_pjvyx6.png"
           }
         />
       </Col>
