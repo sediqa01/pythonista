@@ -19,6 +19,7 @@
     color: #54d9ff;
 }
 .NavBar a {
+    text-decoration: none;
     font-size: 1.4rem;
 }
 .NavBar a:hover {
@@ -46,5 +47,8 @@
     color: #ffffff;
     font-size: 1.3rem;
     font-weight: 500;
-    
+}
+
+.Active i {
+    color: #54d9ff;
 }
