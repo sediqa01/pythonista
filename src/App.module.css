@@ -15,3 +15,31 @@
 a:hover {
   text-decoration: none;
 }
+
+.Content {
+  background-color: #fff;
+  padding: 14px;
+  border-radius: 7px;
+  border: 1px solid #fff;
+  margin-bottom: 13px;
+}
+
+.Content h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #2d649b;
+  font-size: 22px;
+  text-align: center;
+  margin: 0.5rem!important;
+}
+
+.FillerImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}

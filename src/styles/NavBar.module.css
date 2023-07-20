@@ -7,7 +7,7 @@
 
 
 .NavBar i {
-    color: #ffffff;
+    color: #fff;
     padding: 0px 6px 0px 6px;
     vertical-align: middle;
     font-size: 1.3rem;
@@ -24,7 +24,7 @@
 }
 .NavBar a:hover {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
 }
 
 .NavBar a:hover i {
@@ -35,7 +35,7 @@
     padding-right: 0px;
     font-size: 1.6rem;
     font-weight: 500;
-    color:#ffffff;
+    color:#fff;
     vertical-align: middle;
 }
 .NavBrand i {
@@ -44,7 +44,7 @@
 
 .NavLink {
     padding: 0px 8px 0px 8px;
-    color: #ffffff;
+    color: #fff;
     font-size: 1.3rem;
     font-weight: 500;
 }
