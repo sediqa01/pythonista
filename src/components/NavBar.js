@@ -9,7 +9,7 @@ const NavBar = () => {
         <Container>
             <NavLink to="/">
             <Navbar.Brand className={styles.NavBrand}>
-              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <i className="fa-solid fa-code" aria-hidden="true"></i>
               <span>Pythonista</span>
             </Navbar.Brand>
             </NavLink>
@@ -22,14 +22,14 @@ const NavBar = () => {
                    activeClassName={styles.Active}
                    to="/"
                     >
-                  <i class="fa-solid fa-house"></i>Home
+                  <i className="fa-solid fa-house"></i>Home
                   </NavLink>
 
                   {/* <NavLink className={styles.NavLink}>
-                  <i class="fa-solid fa-square-plus"></i> Create Post
+                  <i className="fa-solid fa-square-plus"></i> Create Post
                   </NavLink>
                   <NavLink className={styles.NavLink} >
-                  <i class="fa-solid fa-calendar-days"></i> Meetup
+                  <i className="fa-solid fa-calendar-days"></i> Meetup
                   </NavLink> */}
 
                    <NavLink
@@ -37,7 +37,7 @@ const NavBar = () => {
                     activeClassName={styles.Active}
                     to="/signin"
                     >
-                   <i class="fa-solid fa-right-to-bracket"></i>Sign In
+                   <i className="fa-solid fa-right-to-bracket"></i>Sign In
                   </NavLink>
 
                   <NavLink 
