@@ -10,7 +10,8 @@ import {
   Col,
   Row,
   Container,
-  Image
+  Image,
+  Alert
 } from "react-bootstrap";
 
 function SignInForm() {
@@ -20,7 +21,7 @@ function SignInForm() {
     });
     const { username, password } = signInData;
     const history = useHistory();
-
+    const [errors, setErrors] = useState({});
     const handleChange = (event) => {
       setSignInData({
         /* split out earlier signup information so that just the pertinent characteristic is updated */
@@ -36,8 +37,6 @@ function SignInForm() {
         try {
           /* include the signInData supplied and reroute to the URL */
           const { data } = await axios.post("dj-rest-auth/login/", signInData);
-          setCurrentUser(data.user);
-          setTokenTimestamp(data);
           history.goBack();
         } catch (err) {
           /* optional chaining (?) to check if there is a an error response */
@@ -61,9 +60,14 @@ function SignInForm() {
                 name="username"
                 value={username}
                 onChange={handleChange}
-
               />
             </Form.Group>
+             {/* display error message if something is wrong with username field */}
+             {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -75,7 +79,12 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-           
+             {/* display error message if something is wrong with password field */}
+             {errors.password?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
@@ -83,7 +92,11 @@ function SignInForm() {
               Sign In
             </Button>
           </Form>
-
+          {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
