@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import styles from "../../styles/Registaration.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -13,8 +13,10 @@ import {
   Image,
   Alert
 } from "react-bootstrap";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
+    const setCurrentUser = useSetCurrentUser();
     const [signInData, setSignInData] = useState({
       username: "",
       password: "",
@@ -37,6 +39,7 @@ function SignInForm() {
         try {
           /* include the signInData supplied and reroute to the URL */
           const { data } = await axios.post("dj-rest-auth/login/", signInData);
+          setCurrentUser(data.user);
           history.goBack();
         } catch (err) {
           /* optional chaining (?) to check if there is a an error response */
