@@ -5,7 +5,6 @@
     font-family: 'Calistoga', cursive;
 }
 
-
 .NavBar i {
     color: #fff;
     padding: 0px 6px 0px 6px;
@@ -24,7 +23,6 @@
 }
 .NavBar a:hover {
     text-decoration: none;
-    color: #fff;
 }
 
 .NavBar a:hover i {
@@ -43,12 +41,32 @@
 }
 
 .NavLink {
-    padding: 0px 8px 0px 8px;
     color: #fff;
-    font-size: 1.3rem;
-    font-weight: 500;
+    display: block;
+    padding: 0.6rem 0.70rem;
+    text-align: center;
 }
 
 .Active i {
     color: #54d9ff;
+}
+
+.dropdownItems {
+    display: block;
+    padding: 0.10rem 0.80rem;
+    clear: both;
+    font-weight: 400;
+    color: #2d649b;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+}
+
+.dropdownItems:hover {
+    color: #54d9ff;
+}
+.dropdownItems i {
+    color: #2d649b;
 }
