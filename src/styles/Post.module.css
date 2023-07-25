@@ -1,0 +1,23 @@
+.Post {
+    background-color: #fff;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.Post figure,
+h5 {
+    margin: 0 0;
+}
+
+.LikeImpossible:hover {
+    color: #000;
+}
+
+.Liked {
+    color: #54d9ff;
+}
+
+.UnLiked {
+    color: #2d649b;
+}
