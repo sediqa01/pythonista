@@ -6,8 +6,8 @@ const Asset = ({ spinner, src, message }) => {
   return (
     <div className={`${styles.Asset} p-4`}>
       {spinner && <Spinner className={styles.Spinner} animation="border" />}
-      {src && <img src={src} alt={message}  width={300} height={300}/>}
-      {message && <p className="mt-4">{message}</p>}
+      {src && <img src={src} alt={message}  width={100} height={100}/>}
+      {message && <p className={`${styles.text}`}>{message}</p>}
     </div>
   );
 };

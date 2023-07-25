@@ -43,3 +43,9 @@ a:hover {
   max-width: 100%;
   object-fit: contain;
 }
+
+.headerText {
+  color: #2d649b;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
