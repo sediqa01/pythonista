@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
+// import useState from "react";
 import { NavLink } from 'react-router-dom'
 import styles from "../styles/NavBar.module.css"
 import { Link } from "react-router-dom";
@@ -13,8 +14,6 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  // Variables to toggle open and closed mobile navbar burger menu
-  const [toggleNavBar, setToggleNavBar] = useState(false);
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
@@ -56,9 +55,6 @@ const NavBar = () => {
         className={styles.dropdownItems}
         as={Link} 
         to={`/profiles/${currentUser?.profile_id}`}
-        onClick={() => {
-          setToggleNavBar(!toggleNavBar);
-        }}
       >
       <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
       </NavDropdown.Item>
@@ -74,11 +70,7 @@ const NavBar = () => {
     </NavDropdown>
     </>
   )
-  // const profileDropdownIcons = (
-  //   <>
-    
-  //   </>
-  // )
+
   const loggedOutIcons = (
     <>
     <NavLink
@@ -99,38 +91,40 @@ const NavBar = () => {
   )
   return (
     <Navbar
-     className={styles.NavBar}
+      collapseOnSelect
+      className={styles.NavBar}
       expand="md"
       fixed='top'
-      expanded={expanded}>
+      expanded={expanded}
+      >
         <Container>
-            <NavLink to="/">
-            <Navbar.Brand className={styles.NavBrand}>
-              <i className="fa-solid fa-code" aria-hidden="true"></i>
-              <span>Pythonista</span>
-            </Navbar.Brand>
-            </NavLink>
-            <Navbar.Toggle
-              ref={ref}
-              onClick={() => setExpanded(!expanded)} 
-              aria-controls="basic-navbar-nav"  />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ms-auto text-left">
-                  <NavLink
-                   exact
-                   className={styles.NavLink}
-                   activeClassName={styles.Active}
-                   to="/"
-                    >
-                  <i className="fa-solid fa-house"></i>Home
-                  </NavLink>
-                  {currentUser && createPostIcon}
-                  
-                  {/* {currentUser && profileDropdownIcons} */}
-                 
-                  {currentUser ? loggedInIcons : loggedOutIcons}
-                </Nav>
-            </Navbar.Collapse>
+          <NavLink to="/">
+          <Navbar.Brand className={styles.NavBrand}>
+            <i className="fa-solid fa-code" aria-hidden="true"></i>
+            <span>Pythonista</span>
+          </Navbar.Brand>
+          </NavLink>
+          <Navbar.Toggle
+            ref={ref}
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
+            aria-controls="basic-navbar-nav"  />
+          <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto text-left navbar-nav">
+                <NavLink
+                  exact
+                  className={styles.NavLink}
+                  activeClassName={styles.Active}
+                  to="/"
+                  >
+                <i className="fa-solid fa-house"></i>Home
+                </NavLink>
+                {currentUser && createPostIcon}
+                
+                {currentUser ? loggedInIcons : loggedOutIcons}
+              </Nav>
+          </Navbar.Collapse>
         </Container>
     </Navbar>
   )
