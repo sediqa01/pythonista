@@ -76,7 +76,11 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-    
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="danger" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-5 mb-0`}
         onClick={() => {
@@ -126,7 +130,6 @@ function PostCreateForm() {
                   <Asset src={Upload} message="Click or tap to uplaod an Image" /> 
                 </Form.Label>
               )}
-
               <Form.File
                 id="image-upload"
                 accept="image/*"
@@ -134,6 +137,11 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="danger" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="mb-6">{textFields}</div>
           </Container>
         </Col>
