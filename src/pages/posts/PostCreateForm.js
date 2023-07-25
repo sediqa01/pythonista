@@ -47,6 +47,8 @@ function PostCreateForm() {
           as="textarea"
           rows={6}
           name="content"
+          placeholder="Write your post content here ..."
+          aria-label="text-area"
           className={appStyles.Input}
           value={content}
           onChange={handleChange}
