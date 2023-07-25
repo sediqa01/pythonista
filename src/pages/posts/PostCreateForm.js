@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
+import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+  Container,
+  Image
+ }
+ from "react-bootstrap";
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
 
 function PostCreateForm() {
 
   const [errors, setErrors] = useState({});
-
+  const imageInput = useRef(null);
+  const history = useHistory();
   const [postData, setPostData] = useState({
     content: "",
     image: "",
@@ -39,6 +44,23 @@ function PostCreateForm() {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
+    } catch (error) {
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
+      }
+    }
+  };
+
   const textFields = (
     <div className="text-center pt-0 pt-lg-4">
       <Form.Group>
@@ -57,6 +79,9 @@ function PostCreateForm() {
     
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-5 mb-0`}
+        onClick={() => {
+          history.goBack();
+        }}
       >
         Cancel
       </Button>
@@ -69,7 +94,10 @@ function PostCreateForm() {
   );
 
   return (
-    <Form className="mt-2 mt-md-5">
+    <Form
+     className="mt-2 mt-md-5"
+     onSubmit={handleSubmit}
+     >
       <Row>
         <Col className="py-2 p-0 p-md-2">
           <Container
@@ -103,6 +131,7 @@ function PostCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
             </Form.Group>
             <div className="mb-6">{textFields}</div>
