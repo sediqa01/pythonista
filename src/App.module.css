@@ -47,5 +47,13 @@ a:hover {
 .headerText {
   color: #2d649b;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 500;
+}
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+input[type="file"] {
+  display: none;
 }
