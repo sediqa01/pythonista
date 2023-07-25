@@ -7,7 +7,8 @@ import {
   Row,
   Col,
   Container,
-  Image
+  Image,
+  Alert
  }
  from "react-bootstrap";
 import Upload from "../../assets/upload.png";
