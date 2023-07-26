@@ -54,6 +54,7 @@ const Post = (props) => {
           }));
         } catch (err) {
           console.log(err);
+
         }
       };
 
@@ -68,17 +69,15 @@ const Post = (props) => {
             <span>{owner}</span>
           </div>
           <div className="d-flex align-items-center">
-            <span>{updated_at}</span>
+            <small>{updated_at}</small>
             {is_owner && postPage && ".."}
           </div>
         </Media>
-        <Card.Body>
-            {content && <Card.Text>{content}</Card.Text>}
-        </Card.Body>
+            {content && <pre className={styles.PostContent}>{content}</pre>}
         <Link to={`/posts/${id}`}>
             <Card.Img src={image} alt="Post Image" />
         </Link>
-        <div className={styles.PostBar}>
+        <div  className={`${styles.PostIcons} text-center text-md-start`}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -92,7 +91,7 @@ const Post = (props) => {
             </span>
           ) : currentUser ? (
             <span onClick={handleLike}>
-              <i className={`fa-solid fa-thumbs-up ${styles.UnLiked}`} />
+              <i className="fa-solid fa-thumbs-up" />
             </span>
           ) : (
             <OverlayTrigger

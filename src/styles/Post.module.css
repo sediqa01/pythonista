@@ -1,30 +1,40 @@
 .Post {
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: 8px;
     margin-bottom: 16px;
     text-align: center;
     border: none;
-}
-
-.PostBar {
-    border-top: 1px solid #83a5aa;
+  }
+  
+  .PostContent {
+    color: #494949;
     margin-top: 20px;
-    padding-top: 10px;
-}
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap; 
+    word-break: break-word;
+  }
+
+  .PostIcons i {
+    color: #2d649b;
+    font-size: 140%;
+    cursor: pointer;
+    margin: 40px 5px 15px 20px;
+  }
+  
+  .PostIcons i:hover {
+    color: #54d9ff;
+  }
 
 .Post figure,
-h5 {
+  h5 {
     margin: 0 0;
 }
 
 .LikeImpossible:hover {
-    color: #000;
+    color: #000 !important;
 }
 
 .Liked {
-    color: #54d9ff;
-}
-
-.UnLiked {
-    color: #2d649b;
+  color: #54d9ff !important;
 }

@@ -23,6 +23,7 @@
 }
 .NavBar a:hover {
     text-decoration: none;
+    color: #fff;
 }
 
 .NavBar a:hover i {
@@ -56,17 +57,10 @@
     padding: 0.10rem 0.80rem;
     clear: both;
     font-weight: 400;
-    color: #2d649b;
     text-align: inherit;
     white-space: nowrap;
-    background-color: transparent;
     border: 0;
     text-align: left;
 }
 
-.dropdownItems:hover {
-    color: #54d9ff;
-}
-.dropdownItems i {
-    color: #2d649b;
-}
+
