@@ -98,7 +98,7 @@ const Post = (props) => {
         <Link to={`/posts/${id}`}>
             <Card.Img src={image} alt={content} />
         </Link>
-        <div  className={`${styles.PostIcons} text-center text-md-start`}>
+        <div  className={`${styles.PostIcons} text-center text-md-start m-4`}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
