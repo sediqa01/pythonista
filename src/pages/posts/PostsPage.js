@@ -8,7 +8,6 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({message}) {
 
@@ -52,7 +51,7 @@ function PostsPage({message}) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search posts"
+            placeholder="Search Posts"
           />
         </Form>
         {hasLoaded ? (
@@ -71,7 +70,7 @@ function PostsPage({message}) {
               <Container className={appStyles.Content}>
                 <Asset
                  icon="fa-brands fa-searchengin"
-                  message={message} />
+                 message={message} />
               </Container>
             )}
           </>

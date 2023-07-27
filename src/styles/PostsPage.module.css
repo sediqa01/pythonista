@@ -3,18 +3,13 @@
     color: #242a3d;
     padding-left: 40px;
     margin-bottom: 16px;
-    height: 45.6px;
+    height: 40.6px;
     vertical-align: middle;
 }
 
 .SearchBar input:focus {
     box-shadow: 0 0 0 0.2rem rgba(84, 217, 255, 0.5);
 }
-
-/* .SearchBar select {
-    color: #2f4858;
-    margin-bottom: 16px;
-  } */
 
 .SearchIcon {
     position: absolute;
