@@ -61,14 +61,14 @@ const Post = (props) => {
   return (
     <Card className={styles.Post}>
       <Card.Body>
-        <Media className="align-items-center justify-content-between">
+        <Media className="d-flex align-items-center justify-content-between">
           <div>
             <Link to={`/profiles/${profile_id}`}>
               <Avatar src={profile_image} height={55} />
             </Link>
             <span>{owner}</span>
           </div>
-          <div className="d-flex align-items-center">
+          <div className=" align-items-center">
             <small>{updated_at}</small>
               {is_owner && postPage && ".."}
             </div>

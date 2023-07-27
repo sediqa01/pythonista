@@ -3,7 +3,7 @@
     border-radius: 8px;
     margin-bottom: 16px;
     text-align: center;
-    border: none !important;
+    border: none;
   }
   
   .PostContent {
@@ -32,9 +32,9 @@
 }
 
 .LikeImpossible:hover {
-    color: #000 !important;
+    color: #000;
 }
 
 .Liked {
-  color: #54d9ff !important;
+  color: #54d9ff;
 }

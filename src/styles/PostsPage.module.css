@@ -11,6 +11,11 @@
     box-shadow: 0 0 0 0.2rem rgba(84, 217, 255, 0.5);
 }
 
+/* .SearchBar select {
+    color: #2f4858;
+    margin-bottom: 16px;
+  } */
+
 .SearchIcon {
     position: absolute;
     font-size: 1.2rem;
