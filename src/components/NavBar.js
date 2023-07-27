@@ -52,7 +52,8 @@ const NavBar = () => {
         id="basic-nav-dropdown" 
       >
       <NavDropdown.Item 
-        className={styles.dropdownItems}
+        className={styles.NavLink}
+        id={styles.dropdownItems}
         as={Link} 
         to={`/profiles/${currentUser?.profile_id}`}
       >
@@ -60,7 +61,8 @@ const NavBar = () => {
       </NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item 
-        className={styles.dropdownItems}
+        className={styles.NavLink}
+        id={styles.dropdownItems}
         as={Link} 
         to="/" 
         onClick={handleSignOut}
@@ -85,7 +87,7 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       >
-      <i class="fa-solid fa-user-plus"></i>Sign Up
+      <i className="fa-solid fa-user-plus"></i>Sign Up
       </NavLink>
   </>
   )

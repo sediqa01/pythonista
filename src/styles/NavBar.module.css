@@ -52,10 +52,11 @@
     color: #54d9ff;
 }
 
-.dropdownItems {
+#dropdownItems {
     display: block;
     padding: 0.10rem 0.80rem;
     clear: both;
+    color:#2d649b;
     font-weight: 400;
     text-align: inherit;
     white-space: nowrap;
@@ -63,4 +64,14 @@
     text-align: left;
 }
 
+#dropdownItems:hover {
+    color: #54d9ff !important;
+}
 
+#dropdownItems i {
+    color: #2d649b !important;
+}
+
+#dropdownItems i:hover {
+    color: #54d9ff !important;
+}

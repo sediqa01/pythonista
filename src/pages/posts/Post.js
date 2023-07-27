@@ -70,12 +70,12 @@ const Post = (props) => {
           </div>
           <div className="d-flex align-items-center">
             <small>{updated_at}</small>
-            {is_owner && postPage && ".."}
-          </div>
-        </Media>
+              {is_owner && postPage && ".."}
+            </div>
+          </Media>
             {content && <pre className={styles.PostContent}>{content}</pre>}
         <Link to={`/posts/${id}`}>
-            <Card.Img src={image} alt="Post Image" />
+            <Card.Img src={image} alt={content} />
         </Link>
         <div  className={`${styles.PostIcons} text-center text-md-start`}>
           {is_owner ? (

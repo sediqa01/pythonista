@@ -58,3 +58,9 @@ input[type="file"] {
   display: none;
 }
 
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
