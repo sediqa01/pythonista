@@ -12,8 +12,31 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #000000;
+}
+
 a:hover {
   text-decoration: none;
+  color: #2d649b;
+}
+
+a:hover i {
+  color: #54d9ff;
+  transition: color ease-in-out 0.3s;
+}
+
+i {
+  color: #2d649b;
+  font-size: 1.3rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #54d9ff;
 }
 
 .Content {
@@ -58,9 +81,4 @@ input[type="file"] {
   display: none;
 }
 
-.Link {
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  margin-bottom: 20px;
-}
+
