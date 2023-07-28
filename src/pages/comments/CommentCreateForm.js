@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import styles from "../../styles/Comment.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -46,6 +47,7 @@ function CommentCreateForm(props) {
             <Avatar src={profileImage} />
           </Link>
           <Form.Control
+            className={styles.Form}
             placeholder="type here..."
             as="textarea"
             value={content}
@@ -55,6 +57,7 @@ function CommentCreateForm(props) {
         </InputGroup>
       </Form.Group>
       <button
+        className={`${styles.Button} btn d-block ml-auto`}
         disabled={!content.trim()}
         type="submit"
       >
