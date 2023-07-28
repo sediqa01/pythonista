@@ -7,6 +7,9 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
 import appStyles from "../../App.module.css";
 import Comment from "../comments/Comment";
+import { fetchMoreData } from "../../utils/utils";
+import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function PostPage() {
 
@@ -41,24 +44,30 @@ function PostPage() {
         <Container className={appStyles.Content}>
         {currentUser ? (
             <CommentCreateForm
-              profile_id={currentUser.profile_id}
-              profileImage={profile_image}
-              post={id}
-              setPost={setPost}
-              setComments={setComments}
-            />
-          ) : comments.results.length ? (
-            "Comments"
-          ) : null}
-          {comments.results.length ? (
-            comments.results.map((comment) => (
+            profile_id={currentUser.profile_id}
+            profileImage={profile_image}
+            post={id}
+            setPost={setPost}
+            setComments={setComments}
+          />
+        ) : comments.results.length ? (
+          "Comments"
+        ) : null}
+        {comments.results.length ? (
+          <InfiniteScroll
+            children={comments.results.map((comment) => (
               <Comment
                 key={comment.id}
                 {...comment}
                 setPost={setPost}
                 setComments={setComments}
               />
-            ))
+            ))}
+            dataLength={comments.results.length}
+            loader={<Asset spinner />}
+            hasMore={!!comments.next}
+            next={() => fetchMoreData(comments, setComments)}
+          />
           ) : currentUser ? (
             <span>Be the first to comment!</span>
           ) : (

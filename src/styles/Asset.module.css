@@ -22,3 +22,19 @@
     box-shadow: 0 0 0 0.2rem rgba(84, 217, 255, 0.5);
   }
   
+  /* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
