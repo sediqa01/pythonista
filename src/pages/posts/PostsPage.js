@@ -40,8 +40,8 @@ function PostsPage({message}) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+      <Col className="py-2 p-0 p-lg-2 " lg={7}>
+        <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
