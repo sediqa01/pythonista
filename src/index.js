@@ -3,14 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from './reportWebVitals';
+import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 
 ReactDOM.render(
   <Router>
     <CurrentUserProvider>
-    <App />
-    </CurrentUserProvider>
+        <ProfileDataProvider>
+          <App />
+        </ProfileDataProvider>
+      </CurrentUserProvider>
   </Router>,
 document.getElementById("root")
 );
