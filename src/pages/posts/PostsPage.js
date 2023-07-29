@@ -8,6 +8,7 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostsPage({message}) {
 
@@ -81,7 +82,7 @@ function PostsPage({message}) {
         )}
       </Col>
       <Col lg={4} className={`${appStyles.headerText} d-none d-lg-block p-0 p-lg-2`}>
-      <i className="fa-solid fa-users"></i> Discover People
+       <PopularProfiles />
       </Col>
     </Row>
   );
