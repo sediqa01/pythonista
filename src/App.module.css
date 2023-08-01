@@ -73,9 +73,10 @@ i:hover {
 }
 
 .headerText {
+
   color: #2d649b;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 figure {
   text-align: center;
