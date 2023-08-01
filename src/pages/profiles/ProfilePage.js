@@ -57,6 +57,28 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
            {profile?.bio && <Col className="p-3">{profile.bio}</Col>}
+           <Row className="justify-content-center no-gutters">
+            {profile?.github && (
+              <a href={profile?.github} target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            )}
+            {profile?.linkedin && (
+              <a href={profile?.linkedin} target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+              </a>
+            )}
+            {profile?.website && (
+              <a href={profile?.website} target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-website" aria-hidden="true"></i>
+              </a>
+            )}
+            {profile?.stack_overflow && (
+              <a href={profile?.stack_overflow} target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-stack_overflow" aria-hidden="true"></i>
+              </a>
+            )}
+          </Row>
           <Row className="mt-4 justify-content-space-between">
           <Col className="my-2">
               <div className={styles.Count}>{profile?.posts_count}</div>
