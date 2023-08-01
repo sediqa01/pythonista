@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Form, Row, Col, Container } from "react-bootstrap";
+
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
@@ -40,7 +45,7 @@ function PostsPage({message}) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 " lg={7}>
+      <Col className="py-2 p-0 p-lg-2 " lg={8}>
         <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form

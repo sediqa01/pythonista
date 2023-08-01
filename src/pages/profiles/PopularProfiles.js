@@ -5,7 +5,7 @@ import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
 
-const PopularProfiles = (mobile) => {
+const PopularProfiles = ({mobile}) => {
    const { popularProfiles } = useProfileData();
 
 return (
@@ -16,7 +16,7 @@ return (
     >
       {popularProfiles.results.length ? (
         <>
-          <p>
+        <p>
             <i className="fa-solid fa-users"></i>Discover Profiles
         </p>
         {mobile ? (
