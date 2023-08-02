@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { Button } from "react-bootstrap";
@@ -12,6 +13,7 @@ const Profile = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const { handleFollow} = useSetProfileData();
 
   return (
     <div
@@ -32,15 +34,16 @@ const Profile = (props) => {
           (following_id ? (
             <Button
               className={`${btnStyles.Button} ${btnStyles.BlueOutline}`}
+              
             >
-              Unfollow
+              unfollow
             </Button>
           ) : (
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              
+              onClick={() => handleFollow(profile)}
             >
-              Follow
+              follow
             </Button>
           ))}
       </div>
