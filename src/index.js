@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Router>

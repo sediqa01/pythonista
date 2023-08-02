@@ -61,18 +61,17 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-    
+    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
-        {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
           <Image
             className={styles.ProfileImage}
             roundedCircle
             src={profile?.image}
           />
-          <h2 className={styles.Owner}>{profile?.owner}</h2>
-        </Col>
+       </Col>
         <Col lg={6}>
+           <h2 className={styles.Owner}>{profile?.owner}</h2>
            {profile?.bio && <Col className="p-3">{profile.bio}</Col>}
            <Row className="justify-content-center no-gutters">
             {profile?.github && (
