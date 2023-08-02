@@ -67,18 +67,18 @@ const UsernameForm = () => {
               />
             </Form.Group>
             {errors?.username?.map((message, idx) => (
-              <Alert key={idx} variant="danger" className="mt-3">
+              <Alert key={idx} variant="danger" className="m-4">
                 {message}
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mt-4`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} mt-3`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mt-4`}
+              className={`${btnStyles.Button} ${btnStyles.Blue} mt-3`}
               type="submit"
             >
               Make a change
