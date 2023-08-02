@@ -21,6 +21,10 @@
     border-radius: 50%;
     box-shadow: 0 0 0 0.2rem rgba(84, 217, 255, 0.5);
   }
+
+  .Spinner {
+    background-color: #54d9ff;
+  }
   
   /* scrollbar */
 *::-webkit-scrollbar {

@@ -13,8 +13,13 @@ import { axiosReq } from "../../api/axiosDefaults";
 import {
   useProfileData,
   useSetProfileData,
-} from "../../contexts/ProfileDataContext";
+} 
+from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Post from "../posts/Post";
+import { fetchMoreData } from "../../utils/utils";
+
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -24,20 +29,30 @@ function ProfilePage() {
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+  const [profilePosts, setProfilePosts] = useState({ results: [] });
+  const [profileEvents, setProfileEvents] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] = await Promise.all([
+        const [
+          { data: pageProfile },
+          { data: profilePosts },
+          { data: profileEvents },
+        ] = await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/posts/?owner__profile=${id}`),
+          axiosReq.get(`/events/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setProfilePosts(profilePosts);
+        setProfileEvents(profileEvents);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchData();
@@ -70,12 +85,12 @@ function ProfilePage() {
             )}
             {profile?.website && (
               <a href={profile?.website} target="_blank" rel="noreferrer">
-                <i className="fa-brands fa-website" aria-hidden="true"></i>
+                <i className="fa-solid fa-globe" aria-hidden="true"></i>
               </a>
             )}
             {profile?.stack_overflow && (
               <a href={profile?.stack_overflow} target="_blank" rel="noreferrer">
-                <i className="fa-brands fa-stack_overflow" aria-hidden="true"></i>
+                <i className="fa-brands fa-stack-overflow" aria-hidden="true"></i>
               </a>
             )}
           </Row>
@@ -103,21 +118,18 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-              className={`${btnStyles.Button} ${btnStyles.BlueOutline}`}
-                onClick={() => {}}
+                className={`${btnStyles.Button} ${btnStyles.BlueOutline}`}
               >
                 unfollow
               </Button>
             ) : (
               <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                onClick={() => {}}
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}
               >
                 follow
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
     </>
   );
@@ -125,9 +137,21 @@ function ProfilePage() {
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p className="text-center">Profile owner's posts</p>
-      <hr />
+      {profilePosts.results.length ? (
+        <InfiniteScroll
+          children={profilePosts.results.map((post) => (
+            <Post key={post.id} {...post} setPosts={setProfilePosts} />
+          ))}
+          dataLength={profilePosts.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profilePosts.next}
+          next={() => fetchMoreData(profilePosts, setProfilePosts)}
+        />
+      ) : (
+        <Asset
+            icon="fa-brands fa-searchengin"
+            message={`No result found, ${profile?.owner} hasn't created any posts yet.`} />
+      )}
     </>
   );
 
@@ -141,22 +165,31 @@ function ProfilePage() {
 
   return (
     <Row>
-      <Col className="py-2 p-0 p-lg-2" lg={12}>
-
-        <Container className={appStyles.Content}>
-          {hasLoaded ? (
-            <>
-              {mainProfile}
-              {mainProfilePosts}
-              {mainProfileEvents}
-            </>
-          ) : (
-            <Asset spinner />
-          )}
-        </Container>
-      </Col>
-     
-    </Row>
+    <Col className="py-2 p-0 p-lg-2" lg={12}>
+      <Container className={appStyles.Content}>
+        {hasLoaded ? (
+          <>
+            {mainProfile}
+            <hr />
+            <Row noGutters className="px-3 text-center">
+            <Col lg={6} className="p-2">
+                <h3 className={styles.Heading}>Posts</h3>
+                <div className={styles.postOutline}>
+                {mainProfilePosts}
+                </div>
+              </Col>
+              <Col lg={6} className="p-2">
+                <h3 className={styles.Heading}>Events</h3>
+                {mainProfileEvents}
+              </Col>
+            </Row>
+          </>
+        ) : (
+          <Asset spinner />
+        )}
+      </Container>
+    </Col>
+  </Row>
   );
 }
 

@@ -3,7 +3,7 @@
     border-radius: 8px;
     margin-bottom: 16px;
     text-align: center;
-    border: none;
+    border: 1px solid #bdeaf7;
   }
   
   .PostContent {
