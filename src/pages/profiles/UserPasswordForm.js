@@ -5,8 +5,10 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const UserPasswordForm = () => {
+  useRedirect('loggedOut')
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();

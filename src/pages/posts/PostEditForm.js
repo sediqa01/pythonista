@@ -14,9 +14,10 @@ import {
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function  PostEditForm() {
-
+  useRedirect('loggedOut')
   const [errors, setErrors] = useState({});
   const imageInput = useRef(null);
   const history = useHistory();

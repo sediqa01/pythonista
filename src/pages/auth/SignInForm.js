@@ -14,9 +14,12 @@ import {
   Alert
 } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
+    useRedirect('loggedIn')
+
     const [signInData, setSignInData] = useState({
       username: "",
       password: "",
