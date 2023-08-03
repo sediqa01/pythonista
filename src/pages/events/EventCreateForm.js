@@ -1,4 +1,5 @@
 import React, {  useRef, useState } from "react";
+import { useHistory } from "react-router";
 import {
     Form,
     Button,
@@ -13,10 +14,15 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
+import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function EventCreateForm() {
-  const imageInput = useRef(null);
+    useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
+  const imageInput = useRef(null);
+  const history = useHistory();
+  
   const [eventData, setEventData] = useState({
     title: "",
     description: "",
@@ -52,6 +58,30 @@ function EventCreateForm() {
         ...eventData,
         image: URL.createObjectURL(event.target.files[0]),
       });
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("image", imageInput.current.files[0]);
+    formData.append("event_date", event_date);
+    formData.append("starts_at", starts_at);
+    formData.append("ends_at", ends_at);
+    formData.append("location", location);
+    formData.append("organizer", organizer);
+
+    try {
+      const { data } = await axiosReq.post("/events/", formData);
+      history.push(`/events/${data.id}`);
+    } catch (err) {
+      // console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -98,7 +128,7 @@ function EventCreateForm() {
             <Form.Control
               required
               type="time"
-              name="start_time"
+              name="starts_at"
               aria-label="time-packer"
               className={appStyles.Input}
               value={starts_at}
@@ -110,7 +140,7 @@ function EventCreateForm() {
             <Form.Control
               required
               type="time"
-              name="end_time"
+              name="ends_at"
               aria-label="time-packer"
               className={appStyles.Input}
               value={ends_at}
@@ -143,6 +173,7 @@ function EventCreateForm() {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-3 mb-0`}
+        onClick={() => history.goBack()}
       >
         Cancel
       </Button>
@@ -150,13 +181,16 @@ function EventCreateForm() {
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-3 mb-0`}
         type="submit"
       >
-      Add Event
+      Create
       </Button>
     </div>
   );
 
   return (
-    <Form className="mt-2 mt-md-3">
+    <Form 
+    className="mt-2 mt-md-3"
+    onSubmit={handleSubmit}
+    >
       <Row>
         <Col className="py-2 p-0 p-md-2">
           <Container
