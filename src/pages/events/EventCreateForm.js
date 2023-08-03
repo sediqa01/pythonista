@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useRef, useState } from "react";
 import {
     Form,
     Button,
@@ -15,7 +15,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 
 function EventCreateForm() {
-
+  const imageInput = useRef(null);
   const [errors, setErrors] = useState({});
   const [eventData, setEventData] = useState({
     title: "",
@@ -43,6 +43,16 @@ function EventCreateForm() {
       ...eventData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setEventData({
+        ...eventData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
   };
 
 
@@ -153,16 +163,39 @@ function EventCreateForm() {
             className={`${styles.Container} d-flex flex-column justify-content-center pb-3 pt-2`}
           >
             <Form.Group className="text-center">
+              {image ? (
+                <>
+                  <figure>
+                    <Image className={appStyles.Image} src={image} rounded />
+                  </figure>
+                  <div>
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      htmlFor="image-upload"
+                    >
+                      Change the image
+                    </Form.Label>
+                  </div>
+                </>
+              ) : (
+                <Form.Label
+                  className={`${styles.Upload} d-flex justify-content-center`}
+                  htmlFor="image-upload"
+                >
+                  <Asset
+                    src={Upload}
+                    message="Click or tap to upload an image"
+                  />
+                </Form.Label>
+              )}
 
-              <Form.Label
-                className="d-flex justify-content-center"
-                htmlFor="image-upload"
-              >
-                <Asset src={Upload} message="Click or to uplaod an Image" />
-              </Form.Label>
-
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+                ref={imageInput}
+              />
             </Form.Group>
-
             <div className="mb-6">{textFields}</div>
           </Container>
         </Col>
