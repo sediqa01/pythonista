@@ -17,6 +17,33 @@ import Asset from "../../components/Asset";
 function EventCreateForm() {
 
   const [errors, setErrors] = useState({});
+  const [eventData, setEventData] = useState({
+    title: "",
+    description: "",
+    image: "",
+    event_date: "",
+    starts_at: "",
+    ends_at: "",
+    location: "",
+    organizer: "",
+  });
+  const {
+    title,
+    description,
+    image,
+    event_date,
+    starts_at,
+    ends_at,
+    location,
+    organizer,
+  } = eventData;
+
+  const handleChange = (event) => {
+    setEventData({
+      ...eventData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
 
   const textFields = (
@@ -28,6 +55,8 @@ function EventCreateForm() {
             name="title"
             aria-label="text-box"
             className={appStyles.Input}
+            value={title}
+            onChange={handleChange}
             />
         </Form.Group>
         <Form.Group>
@@ -35,9 +64,11 @@ function EventCreateForm() {
             <Form.Control
             as="textarea"
             rows={6}
-            name="content"
+            name="description"
             aria-label="text-area"
             className={appStyles.Input}
+            value={description}
+            onChange={handleChange}
             />
         </Form.Group>
         <Form.Group>
@@ -45,9 +76,11 @@ function EventCreateForm() {
             <Form.Control
               required
               type="date"
-              name="date"
-              aria-label="date-picker"
+              name="event_date"
+              aria-label="date-calender"
               className={appStyles.Input}
+              value={event_date}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group>
@@ -58,6 +91,8 @@ function EventCreateForm() {
               name="start_time"
               aria-label="time-packer"
               className={appStyles.Input}
+              value={starts_at}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group>
@@ -68,6 +103,8 @@ function EventCreateForm() {
               name="end_time"
               aria-label="time-packer"
               className={appStyles.Input}
+              value={ends_at}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group>
@@ -77,6 +114,8 @@ function EventCreateForm() {
               name="location"
               aria-label="text-box"
               className={appStyles.Input}
+              value={location}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group>
@@ -86,6 +125,8 @@ function EventCreateForm() {
               name="organizer"
               aria-label="text-box"
               className={appStyles.Input}
+              value={organizer}
+              onChange={handleChange}
              
             />
           </Form.Group>
@@ -120,7 +161,7 @@ function EventCreateForm() {
                 <Asset src={Upload} message="Click or to uplaod an Image" />
               </Form.Label>
 
-          </Form.Group>
+            </Form.Group>
 
             <div className="mb-6">{textFields}</div>
           </Container>
