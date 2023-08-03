@@ -99,6 +99,11 @@ function EventCreateForm() {
             onChange={handleChange}
             />
         </Form.Group>
+        {errors?.title?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
         <Form.Group>
             <Form.Label className={appStyles.headerText}>Description</Form.Label>
             <Form.Control
@@ -111,6 +116,11 @@ function EventCreateForm() {
             onChange={handleChange}
             />
         </Form.Group>
+        {errors?.description?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
         <Form.Group>
             <Form.Label className={appStyles.headerText}>Event Date</Form.Label>
             <Form.Control
@@ -123,6 +133,11 @@ function EventCreateForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.event_date?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group>
             <Form.Label className={appStyles.headerText}>Start Time</Form.Label>
             <Form.Control
@@ -135,6 +150,11 @@ function EventCreateForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.starts_at?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group>
             <Form.Label className={appStyles.headerText}>End Time</Form.Label>
             <Form.Control
@@ -147,6 +167,11 @@ function EventCreateForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ends_at?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group>
             <Form.Label className={appStyles.headerText}>Location</Form.Label>
             <Form.Control
@@ -158,6 +183,11 @@ function EventCreateForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.location?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group>
             <Form.Label className={appStyles.headerText}>Organizer</Form.Label>
             <Form.Control
@@ -170,6 +200,11 @@ function EventCreateForm() {
              
             />
           </Form.Group>
+          {errors?.organizer?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue} mt-3 mb-0`}
@@ -218,7 +253,7 @@ function EventCreateForm() {
                 >
                   <Asset
                     src={Upload}
-                    message="Click or tap to upload an image"
+                    message="Click to Upload your Event poster here "
                   />
                 </Form.Label>
               )}
@@ -230,6 +265,11 @@ function EventCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="mb-6">{textFields}</div>
           </Container>
         </Col>
