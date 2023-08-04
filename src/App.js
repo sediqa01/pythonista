@@ -63,14 +63,14 @@ function App() {
                   path="/events/:id"
                   render={() => 
                   <EventPage />} />
-                <Route render={() => <p>Page not found!</p>} /> 
                 <Route
                   exact
                   path="/events"
                   render={() => (
                     <EventsPage message="Sorry! no results found :(" />
-                )}
-          />
+                  )}
+                  />
+                <Route render={() => <p>Page not found!</p>} /> 
           </Switch>
         </Container>
       </div>
