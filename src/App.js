@@ -16,6 +16,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
+import EventsPage from "./pages/events/EventsPage";
 
 
 function App() {
@@ -62,7 +63,14 @@ function App() {
                   path="/events/:id"
                   render={() => 
                   <EventPage />} />
-            <Route render={() => <p>Page not found!</p>} /> 
+                <Route render={() => <p>Page not found!</p>} /> 
+                <Route
+                  exact
+                  path="/events"
+                  render={() => (
+                    <EventsPage message="Sorry! no results found :(" />
+                )}
+          />
           </Switch>
         </Container>
       </div>
