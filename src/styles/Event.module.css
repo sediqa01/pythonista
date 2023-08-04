@@ -1,0 +1,41 @@
+.Event {
+    background-color: #fff;
+    /* border: 1px solid #bdeaf7; */
+    border: 1px solid #8fb1d3;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.EventContent {
+    color: #494949;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap; 
+    word-break: break-word;
+}
+
+.Event figure,
+h5 {
+    margin: 0 0;
+}
+
+.EventIcons:hover {
+    cursor:default;
+    color: #2d649b;
+}
+
+
+.Title {
+    color: #2d649b;
+    font-weight: bold;
+}
+
+.Joined {
+    color: #54d9ff;
+}
+
+.NotJoined {
+    color: #2d649b;
+}

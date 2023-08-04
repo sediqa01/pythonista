@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Col, Row, Container }from "react-bootstrap";
 import appStyles from "../../App.module.css";
+import Event from '../events/Event'
 
 function EventPage() {
     const { id } = useParams();
@@ -15,7 +16,7 @@ function EventPage() {
               axiosReq.get(`/events/${id}`),
             ]);
             setEvent({ results: [event] });
-            console.log(event);
+            // console.log(event);
           } catch (err) {
             // console.log(err);
           }
@@ -27,7 +28,7 @@ function EventPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>event component</p>
+      <Event {...event.results[0]} setEvents={setEvent} />
         <Container className={appStyles.Content}>
           Conversations
         </Container>
