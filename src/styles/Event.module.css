@@ -1,7 +1,7 @@
 .Event {
     background-color: #fff;
-    /* border: 1px solid #bdeaf7; */
-    border: 1px solid #8fb1d3;
+    border: 1px solid #bdeaf7;
+    /* border: 1px solid #8fb1d3; */
     border-radius: 8px;
     margin-bottom: 16px;
     text-align: left;
@@ -16,6 +16,12 @@
     word-break: break-word;
 }
 
+.EventBar {
+    border-top: 1px solid #dadadf;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
 .Event figure,
 h5 {
     margin: 0 0;
@@ -26,8 +32,9 @@ h5 {
     color: #2d649b;
 }
 
-
 .Title {
+    margin-top: 25px;
+    margin-bottom: 20px;
     color: #2d649b;
     font-weight: bold;
 }
@@ -38,4 +45,8 @@ h5 {
 
 .NotJoined {
     color: #2d649b;
+}
+
+.JoinImpossible:hover {
+    color: #000;
 }
