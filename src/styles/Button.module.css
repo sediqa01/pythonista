@@ -52,11 +52,11 @@
     color: #2d649b;
 }
 
-.AddContentButton {
-    font-size: 1rem;
-}
-
 .Container {
     margin-bottom: 16px;
     padding: 0px;
+}
+
+.AddEventtButton {
+    font-size: 1rem;
 }

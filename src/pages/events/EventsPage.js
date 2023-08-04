@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Row, Col, Container } from "react-bootstrap";
 import Event from "./Event";
+import { Link } from "react-router-dom";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/EventsPage.module.css";
@@ -9,6 +10,7 @@ import { fetchMoreData } from "../../utils/utils";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import CreateEventButton from "../../components/CreateEventButton";
 
 
 function EventsPage({ message }) {
@@ -42,6 +44,13 @@ function EventsPage({ message }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+      {currentUser && (
+          <CreateEventButton
+           url="/events/create"
+           text="Create Event"
+           icon="fa-solid fa-plus"
+           mobile />
+        )}
       <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -82,6 +91,13 @@ function EventsPage({ message }) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      {currentUser && (
+          <CreateEventButton
+           url="/events/create"
+           text="Create Event"
+           icon="fa-solid fa-plus"
+         />
+        )}
         <p>Upcoming events for desktop here</p>
       </Col>
     </Row>
