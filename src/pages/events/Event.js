@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../../styles/Event.module.css"
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip, } from 'react-bootstrap'
+import { Card, Media, OverlayTrigger, Tooltip, Row, Col } from 'react-bootstrap'
 import { Link} from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -89,6 +89,7 @@ const Event = (props) => {
             </Media>
         </Card.Body>
         <Card.Body>
+        
             <Link to={`/events/${id}`}>
                 <Card.Img src={image} alt={title} />
             </Link>
@@ -96,9 +97,37 @@ const Event = (props) => {
                 <Card.Title className={`text-center ${styles.Title}`}>
                  {title}
                 </Card.Title>
-            </Link>k
+            </Link>
             {description && <Card.Text className={styles.EventContent}>{description}</Card.Text>}
-            <div  className={`${styles.EventBar} text-align-left text-md-start mt-4 m-3"`}>
+            <Row className={`${styles.Row} ${styles.Icon} p-2`}>
+              <Col xs={12} md={6}>
+                <p>
+                  <span className={styles.Icon}><i className="fa-solid fa-calendar-days"></i></span>
+                    {event_date}
+                </p>
+              </Col>
+              <Col xs={12} md={6}>
+                <p>
+                  <span className={styles.Icon}><i className="fa-solid fa-clock"></i></span>
+                   {starts_at} - {ends_at}
+                </p>
+              </Col>
+            </Row>
+            <Row className={styles.Row}>
+              <Col xs={12} md={6}>
+                <p>
+                  <span className={styles.Icon}><i class="fa-solid fa-location-dot"></i></span>
+                   {location}
+                </p>
+              </Col>
+              <Col xs={12} md={6}>
+                <p>
+                  <span className={styles.Icon}><i class="fa-solid fa-user-gear"></i></span>
+                  {organizer}
+                </p>
+              </Col>
+            </Row>
+            <div  className={`${styles.EventBar} text-center text-md-start mt-4 m-3"`}>
             {is_owner ? (
             <OverlayTrigger
               placement="top"

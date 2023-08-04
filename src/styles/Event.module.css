@@ -27,11 +27,6 @@ h5 {
     margin: 0 0;
 }
 
-.EventIcons:hover {
-    cursor:default;
-    color: #2d649b;
-}
-
 .Title {
     margin-top: 25px;
     margin-bottom: 20px;
@@ -49,4 +44,14 @@ h5 {
 
 .JoinImpossible:hover {
     color: #000;
+}
+
+.Row {
+    justify-content: space-evenly;
+
+}
+
+.Icon > i {
+  color:#2d649b;
+  cursor: default;
 }
