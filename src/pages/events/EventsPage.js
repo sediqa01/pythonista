@@ -55,13 +55,19 @@ function EventsPage({ message }) {
             placeholder="Search Events"
           />
         </Form>
-      {hasLoaded ? (
-          <>
-            {events.results.length ? (
-              events.results.map((event) => (
-                <Event key={event.id} {...event} setEvents={setEvents} />
-              ))
-            ) : (
+          {hasLoaded ? (
+            <>
+              {events.results.length ? (
+                <InfiniteScroll
+                  children={events.results.map((event) => (
+                    <Event key={event.id} {...event} setEvents={setEvents} />
+                  ))}
+                  dataLength={events.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!events.next}
+                  next={() => fetchMoreData(events, setEvents)}
+                />
+              ) : (
               <Container className={appStyles.Content}>
                  <Asset
                  icon="fa-brands fa-searchengin"
