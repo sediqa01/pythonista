@@ -185,7 +185,7 @@ const Event = (props) => {
             </OverlayTrigger>
           )}
           {joins_count}
-          <Link to={`/posts/${id}`}>
+          <Link to={`/events/${id}`}>
             <i className="fa-solid fa-message" />
           </Link>
           {conversations_count}
