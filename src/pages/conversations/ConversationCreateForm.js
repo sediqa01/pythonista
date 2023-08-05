@@ -60,7 +60,7 @@ function ConversationCreateForm(props) {
         </InputGroup>
       </Form.Group>
       <button
-        className={`${styles.Button} btn d-block ml-auto m-2`}
+        className={`${styles.Button} d-block ml-auto m-2`}
         disabled={!content.trim()}
         type="submit"
       >

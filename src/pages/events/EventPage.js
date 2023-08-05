@@ -50,7 +50,12 @@ function EventPage() {
           ) : null}
           {conversations.results.length ? (
             conversations.results.map((conversation) => (
-              <Conversation key={conversation.id} {...conversation} />
+              <Conversation 
+              key={conversation.id}
+              {...conversation}
+              setEvent={setEvent}
+              setConversations={setConversations}
+               />
             ))
           ) : currentUser ? (
             <span>No discussion yet, be the first to add!</span>
