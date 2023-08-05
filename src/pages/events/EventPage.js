@@ -7,6 +7,9 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ConversationCreateForm from "../conversations/ConversationCreateForm";
 import Event from '../events/Event'
 import Conversation from "../conversations/Conversation";
+import { fetchMoreData } from "../../utils/utils";
+import Asset from "../../components/Asset";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function EventPage() {
     const { id } = useParams();
@@ -49,14 +52,20 @@ function EventPage() {
             "Conversations"
           ) : null}
           {conversation.results.length ? (
-            conversation.results.map((conversation) => (
+            <InfiniteScroll
+            children={conversation.results.map((conversation) => (
               <Conversation 
-              key={conversation.id}
-              {...conversation}
-              setEvent={setEvent}
-              setConversation={setConversation}
+                key={conversation.id}
+                {...conversation}
+                setEvent={setEvent}
+                setConversation={setConversation}
                />
-            ))
+            ))}
+                dataLength={conversation.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!conversation.next}
+                next={() => fetchMoreData(conversation, setConversation)}
+            />
           ) : currentUser ? (
             <span>No discussion yet, be the first to add!</span>
           ) : (

@@ -18,6 +18,7 @@ from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
+import Event from "../events/Event"
 import { fetchMoreData } from "../../utils/utils";
 
 function ProfilePage() {
@@ -159,9 +160,22 @@ function ProfilePage() {
 
   const mainProfileEvents = (
     <>
-      <hr />
-      <p className="text-center">Profile owner's Event post</p>
-      <hr />
+      {profileEvents.results.length ? (
+        <InfiniteScroll
+          children={profileEvents.results.map((event) => (
+            <Event key={event.id} {...event} setEvents={setProfileEvents} />
+          ))}
+          dataLength={profileEvents.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profileEvents.next}
+          next={() => fetchMoreData(profileEvents, setProfileEvents)}
+        />
+      ) : (
+        <Asset
+            icon="fa-brands fa-searchengin"
+            message={`No result found, ${profile?.owner} hasn't created any events yet.`}
+        />
+      )}
     </>
   );
 
