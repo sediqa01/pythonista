@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
@@ -6,6 +6,7 @@ import styles from "../../styles/Comment.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import ConversationEditForm from "./ConversationEditForm";
 
 const Conversation = (props) => {
   const {
@@ -20,6 +21,7 @@ const Conversation = (props) => {
 } = props;
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const [showEditForm, setShowEditForm] = useState(false);
 
   const handleDelete = async () => {
     try {
@@ -38,12 +40,12 @@ const Conversation = (props) => {
             results: prevConversations.results.filter((conversation) => conversation.id !== id),
         }));
     } catch (err) {
-        console.log(err)
+        // console.log(err)
     }
 };
 
-  return (
-    <div className="mt-3"> 
+return (
+    <div className="mt-3">
       <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
@@ -51,16 +53,27 @@ const Conversation = (props) => {
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
-          <p>{content}</p>
+          {showEditForm ? (
+            <ConversationEditForm 
+            id={id}
+            profile_id={profile_id}
+            content={content}
+            profileImage={profile_image}
+            setConversation={setConversation}
+            setShowEditForm={setShowEditForm}
+            />
+          ) : (
+            <p>{content}</p>
+          )}
         </Media.Body>
-        {is_owner && (
+        {is_owner && !showEditForm && (
           <MoreDropdown
-            handleEdit={() => {}}
-            handleDelete= {handleDelete}
-         />
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
         )}
       </Media>
-    </div>
+ </div>
   );
 };
 

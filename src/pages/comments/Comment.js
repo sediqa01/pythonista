@@ -44,7 +44,7 @@ const Comment = (props) => {
   };
 
   return (
-    <>
+    <div className="mt-3">
       <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
@@ -72,7 +72,7 @@ const Comment = (props) => {
           />
         )}
       </Media>
-    </>
+    </div>
   );
 };
 

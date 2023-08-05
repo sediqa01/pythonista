@@ -7,9 +7,8 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function ConversationCreateForm(props) {
-    const { event, setEvent, setConversations, profileImage, profile_id } = props;
+    const { event, setEvent, setConversation, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
-    const [errors, setErrors] = useState({});
     const handleChange = (event) => {
       setContent(event.target.value);
     };
@@ -21,7 +20,7 @@ function ConversationCreateForm(props) {
           content,
           event,
         });
-        setConversations((prevConversations) => ({
+        setConversation((prevConversations) => ({
           ...prevConversations,
           results: [data, ...prevConversations.results],
         }));
@@ -36,9 +35,6 @@ function ConversationCreateForm(props) {
         setContent("");
     } catch (err) {
       console.log(err);
-      if (err.response?.status !== 401){
-        setErrors(err.response?.data)
-      }
     }
   };
   

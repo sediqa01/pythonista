@@ -13,17 +13,17 @@ function EventPage() {
     const [event, setEvent] = useState({ results: [] });
     const currentUser = useCurrentUser();
     const profile_image = currentUser?.profile_image;
-    const [conversations, setConversations] = useState({ results: [] });
+    const [conversation, setConversation] = useState({ results: [] });
 
     useEffect(() => {
         const handleMount = async () => {
           try {
-            const [{ data: event }, {data: conversations}] = await Promise.all([
+            const [{ data: event }, {data: conversation}] = await Promise.all([
               axiosReq.get(`/events/${id}`),
               axiosReq.get(`/conversations/?event=${id}`)
             ]);
             setEvent({ results: [event] });
-            setConversations(conversations)
+            setConversation(conversation)
           } catch (err) {
             // console.log(err);
           }
@@ -43,18 +43,18 @@ function EventPage() {
             profileImage={profile_image}
             event={id}
             setEvent={setEvent}
-            setConversations={setConversations}
+            setConversation={setConversation}
           />
-          ) : conversations.results.length ? (
+          ) : conversation.results.length ? (
             "Conversations"
           ) : null}
-          {conversations.results.length ? (
-            conversations.results.map((conversation) => (
+          {conversation.results.length ? (
+            conversation.results.map((conversation) => (
               <Conversation 
               key={conversation.id}
               {...conversation}
               setEvent={setEvent}
-              setConversations={setConversations}
+              setConversation={setConversation}
                />
             ))
           ) : currentUser ? (
