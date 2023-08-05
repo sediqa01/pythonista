@@ -1,10 +1,19 @@
 import React from 'react'
 import styles from "../../styles/Event.module.css"
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip, Row, Col } from 'react-bootstrap'
+import {
+  Card,
+  Media,
+  OverlayTrigger,
+  Tooltip,
+  Row,
+  Col } from 'react-bootstrap'
 import { Link} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
+
 
 
 const Event = (props) => {
@@ -31,6 +40,7 @@ const Event = (props) => {
     
       const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
+      const history = useHistory();
 
       const handleJoined = async () => {
         try {
@@ -72,6 +82,20 @@ const Event = (props) => {
         }
       };
 
+      
+
+    const handleEdit = () => {
+      history.push(`/events/${id}/edit`);
+    };
+  
+    const handleDelete = async () => {
+      try {
+        await axiosRes.delete(`/events/${id}/`);
+        history.goBack();
+      } catch (err) {
+        // console.log(err);
+      }
+    };
   return (
     <Card className={styles.Event}>
         <Card.Body>
@@ -84,7 +108,12 @@ const Event = (props) => {
             </div>
             <div className="d-flex align-items-center">
                 <small>{updated_at}</small>
-                {is_owner && eventPage && ".."}
+                {is_owner && eventPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
             </div>
             </Media>
         </Card.Body>

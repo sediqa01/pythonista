@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Row, Col, Container } from "react-bootstrap";
 import Event from "./Event";
-import { Link } from "react-router-dom";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/EventsPage.module.css";
