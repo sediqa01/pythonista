@@ -86,4 +86,7 @@ input[type="file"] {
   display: none;
 }
 
+.Owner {
+  font-weight: bold;
+}
 

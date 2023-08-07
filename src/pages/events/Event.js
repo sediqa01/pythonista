@@ -13,8 +13,7 @@ import { useHistory} from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
-
-
+import appStyles from "../../App.module.css"
 
 const Event = (props) => {
     const {
@@ -104,7 +103,7 @@ const Event = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                 <Avatar src={profile_image} height={55} />
                 </Link>
-                <span>{owner}</span>
+                <span  className={appStyles.Owner}>{owner}</span>
             </div>
             <div className="d-flex align-items-center">
                 <small>{updated_at}</small>

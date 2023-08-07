@@ -80,7 +80,7 @@ function PostPage() {
           )}
         </Container>
       </Col>
-      <Col className={`${appStyles.headerText} d-none d-lg-block p-0 p-lg-2`}>
+      <Col className={" d-none d-lg-block p-0 p-lg-2"}>
         <PopularProfiles />
       </Col>
     </Row>

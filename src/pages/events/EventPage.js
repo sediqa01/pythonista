@@ -9,6 +9,7 @@ import Event from '../events/Event'
 import Conversation from "../conversations/Conversation";
 import { fetchMoreData } from "../../utils/utils";
 import Asset from "../../components/Asset";
+import PopularProfiles from "../profiles/PopularProfiles";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 function EventPage() {
@@ -38,6 +39,7 @@ function EventPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <PopularProfiles mobile />
       <Event {...event.results[0]} setEvents={setEvent} eventPage />
         <Container className={appStyles.Content}>
         {currentUser ? (
@@ -74,7 +76,7 @@ function EventPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-         Upcoming Events for desktop
+       <PopularProfiles />
       </Col>
     </Row>
   );

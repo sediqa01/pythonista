@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "../../styles/Post.module.css";
+import appStyles from "../../App.module.css"
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip} from "react-bootstrap";
 import { Link, useHistory  } from "react-router-dom";
@@ -81,7 +82,7 @@ const Post = (props) => {
             <Link to={`/profiles/${profile_id}`}>
               <Avatar src={profile_image} height={55} />
             </Link>
-            <span>{owner}</span>
+            <span className={appStyles.Owner}>{owner}</span>
           </div>
           <div className="d-flex align-items-center">
             <small>{updated_at}</small>

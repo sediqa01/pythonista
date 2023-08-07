@@ -41,7 +41,7 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/events">
-      <i className="fa-solid fa-calendar-days"></i>Meetup
+      <i className="fa-solid fa-calendar-days"></i>Events
     </NavLink>
     <NavDropdown 
         title={
@@ -95,13 +95,16 @@ const NavBar = () => {
     <Navbar
       collapseOnSelect
       className={styles.NavBar}
-      expand="md"
+      expand="lg"
       fixed='top'
       expanded={expanded}
       >
         <Container>
           <NavLink to="/">
-          <Navbar.Brand className={styles.NavBrand}>
+          <Navbar.Brand
+           className={styles.NavBrand}
+           alt="logo"
+           >
             <i className="fa-solid fa-code" aria-hidden="true"></i>
             <span>Pythonista</span>
           </Navbar.Brand>
@@ -113,7 +116,7 @@ const NavBar = () => {
             }}
             aria-controls="basic-navbar-nav"  />
           <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-auto text-left">
+           <Nav className="ml-auto text-left"> 
                 <NavLink
                   exact
                   className={styles.NavLink}
@@ -123,7 +126,6 @@ const NavBar = () => {
                 <i className="fa-solid fa-house"></i>Home
                 </NavLink>
                 {currentUser && createPostIcon}
-                
                 {currentUser ? loggedInIcons : loggedOutIcons}
               </Nav>
           </Navbar.Collapse>

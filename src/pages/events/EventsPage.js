@@ -10,7 +10,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import CreateEventButton from "../../components/CreateEventButton";
-
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function EventsPage({ message }) {
     const [events, setEvents] = useState({ results: [] });
@@ -50,6 +50,7 @@ function EventsPage({ message }) {
            icon="fa-solid fa-plus"
            mobile />
         )}
+        <PopularProfiles mobile/>
       <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -97,7 +98,7 @@ function EventsPage({ message }) {
            icon="fa-solid fa-plus"
          />
         )}
-        <p>Upcoming events for desktop here</p>
+        <PopularProfiles /> 
       </Col>
     </Row>
   );

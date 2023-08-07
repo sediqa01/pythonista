@@ -16,9 +16,9 @@ return (
     >
       {popularProfiles.results.length ? (
         <>
-        <p>
-            <i className="fa-solid fa-users"></i>Discover Profiles
-        </p>
+        <strong className={appStyles.headerText} >
+          <i className="fa-solid fa-users"></i>Discover Profiles
+        </strong>
         {mobile ? (
             <div className="d-flex justify-content-around">
               {popularProfiles.results.slice(0, 4).map((profile) => (
