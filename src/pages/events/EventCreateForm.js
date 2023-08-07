@@ -16,6 +16,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import { isValid, parseISO, isAfter } from 'date-fns';
 
 function EventCreateForm() {
     useRedirect("loggedOut");
@@ -48,6 +49,17 @@ function EventCreateForm() {
     setEventData({
       ...eventData,
       [event.target.name]: event.target.value,
+    });
+
+    const { name, value } = event.target;
+
+    if (name === 'event_date') {
+      validateEventDate(value);
+    }
+  
+    setEventData({
+      ...eventData,
+      [name]: value,
     });
   };
 
@@ -85,6 +97,32 @@ function EventCreateForm() {
     }
   };
 
+  // event_date validation
+  function validateEventDate(date) {
+    const parsedDate = parseISO(date);
+  
+    if (!isValid(parsedDate)) {
+      setErrors({
+        ...errors,
+        event_date: 'Invalid date format',
+      });
+      return false;
+    }
+  
+    if (isAfter(new Date(), parsedDate)) {
+      setErrors({
+        ...errors,
+        event_date: 'Event date can not be in the past',
+      });
+      return false;
+    }
+
+    setErrors({
+      ...errors,
+      event_date: '',
+    });
+    return true;
+  }
 
   const textFields = (
     <div className="text-center pt-0 pt-lg-4 p-2">
@@ -133,11 +171,7 @@ function EventCreateForm() {
               onChange={handleChange}
             />
           </Form.Group>
-          {errors?.event_date?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
+          {errors.event_date && <p className={styles.error}>{errors.event_date}</p>}
           <Form.Group>
             <Form.Label className={appStyles.headerText}>Start Time</Form.Label>
             <Form.Control
