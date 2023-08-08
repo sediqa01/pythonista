@@ -1,11 +1,10 @@
 import React from "react";
-// import useState from "react";
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import styles from "../styles/NavBar.module.css"
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import Avatar from './Avatar';
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 
@@ -14,12 +13,13 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const { expanded, setExpanded, ref } = useClickOutsideToggle();
+  const [toggleNavBar, setToggleNavBar] = useState(false);
 
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      setToggleNavBar(!toggleNavBar);
     } catch (err) {
       console.log(err);
     }
@@ -30,6 +30,9 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/posts/create"
+      onClick={() => {
+        setToggleNavBar(!toggleNavBar);
+      }}
     >
       <i className="fa-solid fa-square-plus"></i>Create Post
     </NavLink>
@@ -40,7 +43,11 @@ const NavBar = () => {
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/events">
+      to="/events"
+      onClick={() => {
+        setToggleNavBar(!toggleNavBar);
+      }}
+      >
       <i className="fa-solid fa-calendar-days"></i>Events
     </NavLink>
     <NavDropdown 
@@ -56,6 +63,9 @@ const NavBar = () => {
         id={styles.dropdownItems}
         as={Link} 
         to={`/profiles/${currentUser?.profile_id}`}
+        onClick={() => {
+          setToggleNavBar(!toggleNavBar);
+        }}
       >
       <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
       </NavDropdown.Item>
@@ -79,6 +89,9 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/signin"
+      onClick={() => {
+        setToggleNavBar(!toggleNavBar);
+      }}
       >
       <i className="fa-solid fa-right-to-bracket"></i>Sign In
     </NavLink>
@@ -86,6 +99,9 @@ const NavBar = () => {
       to="/signup"
       className={styles.NavLink}
       activeClassName={styles.Active}
+      onClick={() => {
+        setToggleNavBar(!toggleNavBar);
+      }}
       >
       <i className="fa-solid fa-user-plus"></i>Sign Up
       </NavLink>
@@ -97,7 +113,7 @@ const NavBar = () => {
       className={styles.NavBar}
       expand="lg"
       fixed='top'
-      expanded={expanded}
+      expanded={toggleNavBar}
       >
         <Container>
           <NavLink to="/">
@@ -110,9 +126,8 @@ const NavBar = () => {
           </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle
-            ref={ref}
             onClick={() => {
-              setExpanded(!expanded);
+              setToggleNavBar(!toggleNavBar);
             }}
             aria-controls="basic-navbar-nav"  />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -122,6 +137,9 @@ const NavBar = () => {
                   className={styles.NavLink}
                   activeClassName={styles.Active}
                   to="/"
+                  onClick={() => {
+                    setToggleNavBar(!toggleNavBar);
+                  }}
                   >
                 <i className="fa-solid fa-house"></i>Home
                 </NavLink>
