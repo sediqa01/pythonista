@@ -34,7 +34,7 @@ const NavBar = () => {
         setToggleNavBar(!toggleNavBar);
       }}
     >
-      <i className="fa-solid fa-square-plus"></i>Create Post
+      <i className="fa-solid fa-square-plus"></i> Post
     </NavLink>
   );
 
@@ -53,7 +53,7 @@ const NavBar = () => {
     <NavDropdown 
         title={
           <span>
-              <i className="fas fa-user-alt ml-5"></i>
+            <i className="fas fa-user-alt ml-5"></i>
           </span>
         }
         id="basic-nav-dropdown" 
@@ -131,7 +131,7 @@ const NavBar = () => {
             }}
             aria-controls="basic-navbar-nav"  />
           <Navbar.Collapse id="basic-navbar-nav">
-           <Nav className="ml-auto text-left"> 
+           <Nav className="ml-auto text-center"> 
                 <NavLink
                   exact
                   className={styles.NavLink}
