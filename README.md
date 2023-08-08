@@ -102,7 +102,19 @@
 
 
 
-### _Feuture Features_
+### _Future Implementations_
+
+If there was time after my gratuation I'd like to implement these feature in Pythonista appp and make it more powerfull.
+
+* **Job Page:**
+Enable users to post a Job or apply a Job. I was planning to implement Job feature in PP5, but unfortunately due to some unexpected event with my asylum process I was force to leave the country and it happened just when I was about to work on my project. So I was not able to implement the Job feature.
+
+* **Notification Syatem:**
+Allow users to recive notification when someone leave a comment on her/his post, event post or add reaction on a post.
+
+* **Messaging System:**
+A chat functionality, allowing users to send each other messages, and thus to create stronger connections between like-minded people.
+Seeing which users are online including links to the chat page, enabling users to have real-time conversations.
 
 ## Design
 
