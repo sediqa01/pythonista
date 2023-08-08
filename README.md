@@ -109,6 +109,17 @@ If there was time after my gratuation I'd like to implement these feature in Pyt
 * **Job Page:**
 Enable users to post a Job or apply a Job. I was planning to implement Job feature in PP5, but unfortunately due to some unexpected event with my asylum process I was force to leave the country and it happened just when I was about to work on my project. So I was not able to implement the Job feature.
 
+here is the mock-up for Job feature:
+
+* **Job Page**
+![Job Page mock-up](../pythonista/src/assets/readme/jobPage.jpg)
+
+* **Applying For a Job Page**
+![Apply Job Page mock-up](../pythonista/src/assets/readme/applyForm.jpg)
+
+* **Create Job Post Page**
+![Job Form Page mock-up](../pythonista/src/assets/readme/createJob.jpg)
+
 * **Notification Syatem:**
 Allow users to recive notification when someone leave a comment on her/his post, event post or add reaction on a post.
 
@@ -119,6 +130,31 @@ Seeing which users are online including links to the chat page, enabling users t
 ## Design
 
 ### _Mock-Up_
+
+* **Home Page**
+![Home Page mock-up](../pythonista/src/assets/readme/homePage.jpg)
+
+* **Create Post Page**
+![Create Post Form mock-up](../pythonista/src/assets/readme/createPost.jpg)
+
+* **Create Post Page**
+![Create Event Form mock-up](../pythonista/src/assets/readme/createEvent.jpg)
+
+* **Event Page**
+![Event Page mock-up](../pythonista/src/assets/readme/event.jpg)
+
+* **Profile Page**
+![Profile Page](../pythonista/../pythonista/src/assets/readme/profile.jpg)
+
+* **Job Page**
+![Job Page mock-up](../pythonista/src/assets/readme/jobPage.jpg)
+
+* **Applying For a Job Page**
+![Apply Job Page mock-up](../pythonista/src/assets/readme/applyForm.jpg)
+
+* **Create Job Post Page**
+![Job Form Page mock-up](../pythonista/src/assets/readme/createJob.jpg)
+
 ### _Color_
 ### _Typography_
 
