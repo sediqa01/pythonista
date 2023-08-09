@@ -89,4 +89,20 @@ export const handlers = [
         })
       );
   }),
+    
+     // mocks a request for a conversation
+     rest.get(`${baseURL}conversations/`, (req, res, ctx) => {
+        return res(ctx.json({
+            id: 11,
+            event: 5,
+            content: "Please fill out the registration form for signup!",
+            created_at: "3 days, 21 hours ago",
+            updated_at: "3 days, 21 hours ago",
+            owner: "Jasmin",
+            is_owner: false,
+            profile_id: 24,
+            profile_image: "https://res.cloudinary.com/drpij1z8t/image/upload/v1/media/images/jasmin_mjwcpi"
+            })
+        );
+    }),
 ];
