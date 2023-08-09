@@ -37,6 +37,19 @@
 
     React Bootstrap was used to construct the navigation bar, which is fully responsive across devices.
 
+* **Navbar When users are not loggedIn**
+
+    ![Mobile Navbar](../pythonista/src/assets/readme/loggedoutNavbar.jpg)
+
+* **Navbar in Mobile's Screen**
+
+    ![Mobile Navbar](../pythonista/src/assets/readme/mobileNavbar.jpg)
+
+* **Navbar in Tablet's Screen**
+
+    ![Mobile Navbar](../pythonista/src/assets/readme/tabletNavbar.jpg)
+
+
 
 * **Home Page**
 
@@ -59,6 +72,19 @@
     * Ability to create a comment if logged in.
     * Ability to edit or delete post if you are the owner of the post.
 
+
+* **Create Post Form**
+
+    ![Event Page](../pythonista/src/assets/readme/postForm.jpg)
+
+    If users are logged in, they are able to share new posts with the community. By clicking on the Create Post Icon in the Navigation Bar, they are taken to the Share a new post page, where they can submit the post creation form to the API.
+
+* **Post Edit Form**
+
+    ![Post Edit Form](../pythonista/src/assets/readme/editPost.jpg)
+
+    If user click on a post it will take the user to the post page, by clicking the more button near post date , users can find the edit post feature there. By clicking edit users can see post creation form, but the fields are already pre-populated with the existing post information. You can edit the desired fields and save the changes, which will return you to the post detail page and you can see that the post has been updated successfully.
+
 * **Events Page**
 
     ![Event Page](../pythonista/src/assets/readme/eventPage.jpg)
@@ -73,20 +99,59 @@
     An Add Event button that allows the user to simply create their own event.
     * A Popular Profiles component that allows users to easily see other users on the app and follow and unfollow individuals as well as browse their profiles.
 
+
 * **Event Page**
 
     ![Event Post](../pythonista/src/assets/readme/pageEvent.jpg)
+
     The features here are:
     * Ability to edit or delete event if you are the owner of the event.
+
+* **Create Event  Form**
+
+    ![Create Event Page](../pythonista/src/assets/readme/eventForm.jpg)
+
+    If you are logged in, you are able to share new events with the community. By clicking on the Add Event menu option in the Navigation Bar, you are taken to the Share a New Event page, where you can submit the event creation form to the API.
+    Create Event Form consist of event picture, title, description, event date, start time, end time, location and organizer.
+    Once the form has been submitted successfully, you can see the event published successfully as you are re-directed automatically to the newly created event details page.
+
+* **Edit Event Form**
+
+    ![Edit Event Page](../pythonista/src/assets/readme/editEvent.jpg)
+
+    By clicking Edit, you are taken back to the event creation form, but the fields are already pre-populated with the existing event information. You can edit the desired fields and save the changes, which will return you to the event detail page and you can see that the event has been updated successfully.
+
+* **Validating Event Date**
+
+   The Create Event Form is validated to determine that users are not able to add an event in the past; if users add an event date in the past, the form will raise an error that the event cannot be in the past. It will avoid entering the wrong date.
+
+
+    ![Event Date](../pythonista/src/assets/readme/eventDate.jpg)
 
 
 * **Profile Page**
 
     ![Profile Page](../pythonista/src/assets/readme/profilePage.jpg)
+
     The profile page consists conists of the selected user's profile - either your own via the navbar, or other users via clicking on their profile images.
 
     The profiles show the user's username, profile image, bio, any social media links included, user stats regarding followers, posts and events, as well as any posts or events created by the user.
+    The only information that subsequently gets updated in the profile page is the site usage stats, as follows:
 
+    * Number of events the user has posted
+    * Number of posts the user has published
+    * Number of profiles they are following
+    * Number of profiles that are following them
+
+* **Edit Profile Page**
+
+    ![Edit Profile Page](../pythonista/src/assets/readme/editProfile.jpg)
+
+    By clicking the Edit Profile option, they are taken to a new page containing the full profile details form to fill in and submit. Here, they can add their own avatar image, bio, GitHub, website address and LinkedIn.
+
+    Once these fields have been filled in, they can be seen by other users in the main profile page stats container. Any website links that are entered can be clicked on to open the website in a new browser tab.
+
+    Each profile also has a follow button inside the stats container so that other users can click it to follow and unfollow the profile as all profiles won't always appear listed in the popular profiles component, to access the follow functionality there.
 
 * **SignUp Page**
 
