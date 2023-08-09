@@ -156,7 +156,20 @@ Seeing which users are online including links to the chat page, enabling users t
 ![Job Form Page mock-up](../pythonista/src/assets/readme/createJob.jpg)
 
 ### _Color_
+
+The colour palette is made up of following colours:
+ * #2d649b - NavBar background , buttons
+ * #54D9FF - Button hover, border color
+ * #C1DFFF - Inout hover
+ * #F6F6F6 - Sit background
+ * Black #000000 - Content
+ * White #FFFFFF - Component background
+
 ### _Typography_
+I used two google fonts for pythonista:
+ * **'Open Sans', sans-serif** - Sit content
+ * **'Calistoga', cursive** - NavBar Links
+
 
 
 ## Test
