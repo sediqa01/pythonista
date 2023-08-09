@@ -276,8 +276,16 @@ I used two google fonts for pythonista:
 
 ## Deployment
 
-### _Database_
 ### _Heroku_
+
+Once you have created a new gitpod workspace and set up the new project, you are ready to deploy to Heroku.
+
+1. In your heroku account, select Create New App, and give it a unique name related to your project.
+2. Select a region corresponding to where you live and click `Create App`.
+3. Head into the `Deploy` tab select GitHub as the `deployment method`, find your project repository and click `Connect`.
+4. Click `Deploy branch` to trigger Heroku to start building the application.
+5. Once you see the message saying 'build succeeded' you can click `Open App` to see your application in the browser.
+
 
 ## Credits
 
