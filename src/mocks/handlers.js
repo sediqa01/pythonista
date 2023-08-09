@@ -71,19 +71,22 @@ export const handlers = [
         );
     }),
 
-     // mocks a request for a conversation
-     rest.get(`${baseURL}conversations/`, (req, res, ctx) => {
-        return res(ctx.json({
-            id: 11,
-            event: 5,
-            content: "Please fill out the registration form for signup!",
-            created_at: "3 days, 21 hours ago",
-            updated_at: "3 days, 21 hours ago",
-            owner: "Jasmin",
-            is_owner: false,
-            profile_id: 24,
-            profile_image: "https://res.cloudinary.com/drpij1z8t/image/upload/v1/media/images/jasmin_mjwcpi"
-            })
-        );
-    }),
+    // mocks a request for a post
+    rest.get(`${baseURL}posts/`, (req, res, ctx) => {
+      return res(ctx.json({
+        id: 14,
+        owner: "Jasmin",
+        content: "Apple's yearly developer conference is today.",
+        created_at: "05 Aug 23",
+        updated_at: "05 Aug 23",
+        image: "https://res.cloudinary.com/drpij1z8t/image/upload/v1/media/images/apple_vkm8ui",
+        is_owner: true,
+        profile_id: 24,
+        profile_image: "https://res.cloudinary.com/drpij1z8t/image/upload/v1/media/images/jasmin_mjwcpi",
+        like_id: null,
+        likes_count: 0,
+        comments_count: 0
+        })
+      );
+  }),
 ];
