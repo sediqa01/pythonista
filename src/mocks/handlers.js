@@ -105,4 +105,20 @@ export const handlers = [
             })
         );
     }),
+
+    // mocks a request for a comment
+    rest.get(`${baseURL}conversations/`, (req, res, ctx) => {
+      return res(ctx.json({
+        id: 28,
+        owner: "sediqa_hadid",
+        post: 10,
+        content: "Hello from Pythonista",
+        is_owner: false,
+        profile_id: 2,
+        profile_image: "https://res.cloudinary.com/drpij1z8t/image/upload/v1/media/images/pic_xbjb6s",
+        created_at: "1 week, 1 day ago",
+        updated_at: "1 week, 1 day ago"
+        })
+      );
+  }),
 ];
