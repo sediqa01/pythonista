@@ -253,8 +253,26 @@ I used two google fonts for pythonista:
 ## Technologies Used
 
 ### _Languages_
+
+* **HTML5** - Provides the content and structure for the website.
+* **CSS3** - Provides the styling for the website.
+* **JavaScript** - Provides interactive elements of the website.
+* **React.js** - Provides the base for the frontend components.
+
 ### _Frameworks, Libraries & Programs_
 
+* **React -** React was used to create this web app.
+* **React Bootstrap -** React Bootstrap was used to create this web app and to make it fully responsive.
+* **Git -** Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+* **GitHub -** GitHub is used to store the projects code after being pushed from Git.
+* **GitHub Projects -** GitHub Projects was used to create the User Stories.
+* **Heroku -** Heroku was used for the deployed application.
+* **Chrome DevTools -** Chrome DevTools was used to consistently check the site in terms of responsivity, performance, accessibility, best practice and SEO.
+* **Cloudinary -** A service that hosts image files in the project.
+* **My Free Logo Maker -** Used to create the Happening brand logo.
+* **Moqups -** Used  to create the mock-ups during the design process, as well as Sign Up and Sign In hero images.
+* **date-fns -** Installed to validate event date.
+* **msw -** Mock Service Worker, Used for testing.
 
 ## Deployment
 
