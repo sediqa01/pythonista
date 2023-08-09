@@ -144,13 +144,13 @@ const Event = (props) => {
             <Row className={styles.Row}>
               <Col xs={12} md={6}>
                 <p>
-                  <span className={styles.Icon}><i class="fa-solid fa-location-dot"></i></span>
+                  <span className={styles.Icon}><i className="fa-solid fa-location-dot"></i></span>
                    {location}
                 </p>
               </Col>
               <Col xs={12} md={6}>
                 <p>
-                  <span className={styles.Icon}><i class="fa-solid fa-user-gear"></i></span>
+                  <span className={styles.Icon}><i className="fa-solid fa-user-gear"></i></span>
                   {organizer}
                 </p>
               </Col>
