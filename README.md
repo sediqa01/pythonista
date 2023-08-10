@@ -329,12 +329,46 @@ Here are the results:
 
 
 ### _Lighthouse Testing_
+Google Lighthouse in Chrome Developer Tools was used to test the application within the areas of Performance, Accessibility, Best Practices and SEO.
 
+![Lighthouse Report](src/assets/readme/lightHouse.jpg)
 
 ## Bugs
 
 ### _Solved Bugs_
+
+1. During the development of the project, the connection between front-end and backend was disconnected;  And the reason was that the Gitpod URL was changed in the front-end.  With the help of Joanne, one of the tutor team, we connected both apps again.  The solution: By adding CLIENT_ORIGIN_DEV in the env.py file and also in the Heroku config var, the connection was re-established.
+
+    ![Console Error](src/assets/readme/firstError.jpg)
+
+
+2. After installing tools on pythonista app, I've got different versions of some packages that caused, version error.
+for solving this issue, I did the following steps:
+
+    * Deleting your node_modules folder
+    * Deleting your package-lock.json
+    * Replacing the dependencies and scripts parts of package.json with CI moments walkthrough ptoject.
+
+    ![Console Error](src/assets/readme/versionError.jpg)
+
+3.  When I was working on the readme file, the screenshots of the project were not displayed in github, but they were displayed well in the preview of gitpod. This problem was in the path of the files because I had written the path of the files (../pythonista/...), which is this path in Git. The post was correct, but it was wrong on GitHub.
+
+
+Note: During development, I got lots of issues, from spelling issues up to bootstrap styling errors, API connection errors, and many component errors, which I solved by searching on Stackoverflow and other educational websites.
+I was really struggling with an Internet connection problem and have forgotten to note all the solved bugs.
+
+
+
+
+
+
+
+
+
 ### _UnSolved Bugs_
+No bugs so far.
+
+
 
 ## Technologies Used
 
