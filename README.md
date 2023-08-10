@@ -13,7 +13,7 @@
 
  * **Navigation Bar**
 
-    ![NavBar](../pythonista/src/assets/readme/navbar-desktop.jpg)
+    ![NavBar](src/assets/readme/navbar-desktop.jpg)
 
     The navigation bar includes various clickable links, allowing the user to easily access the pages on the app. The links change according to whether the user is signed in or out, giving them access to more content once signed in.
     The links on the navbar are:
@@ -39,21 +39,21 @@
 
 * **Navbar When users are not loggedIn**
 
-    ![Mobile Navbar](../pythonista/src/assets/readme/loggedoutNavbar.jpg)
+    ![Mobile Navbar](src/assets/readme/loggedoutNavbar.jpg)
 
 * **Navbar in Mobile's Screen**
 
-    ![Mobile Navbar](../pythonista/src/assets/readme/mobileNavbar.jpg)
+    ![Mobile Navbar](src/assets/readme/mobileNavbar.jpg)
 
 * **Navbar in Tablet's Screen**
 
-    ![Mobile Navbar](../pythonista/src/assets/readme/tabletNavbar.jpg)
+    ![Mobile Navbar](src/assets/readme/tabletNavbar.jpg)
 
 
 
 * **Home Page**
 
-  ![Home Page](../pythonista/src/assets/readme/home.jpg)
+  ![Home Page](src/assets/readme/home.jpg)
 
     The homepage is the user's first port of call and consists of user posts, post search, discover profiles.
 
@@ -63,7 +63,7 @@
 
 * **Post Page**
 
-    ![Post Page](../pythonista/src/assets/readme/postPage.jpg)
+    ![Post Page](src/assets/readme/postPage.jpg)
 
     The post page contains further information on the post in question, as well as the homepage version of the post.
 
@@ -75,19 +75,19 @@
 
 * **Create Post Form**
 
-    ![Event Page](../pythonista/src/assets/readme/postForm.jpg)
+    ![Event Page](src/assets/readme/postForm.jpg)
 
     If users are logged in, they are able to share new posts with the community. By clicking on the Create Post Icon in the Navigation Bar, they are taken to the Share a new post page, where they can submit the post creation form to the API.
 
 * **Post Edit Form**
 
-    ![Post Edit Form](../pythonista/src/assets/readme/editPost.jpg)
+    ![Post Edit Form](src/assets/readme/editPost.jpg)
 
     If user click on a post it will take the user to the post page, by clicking the more button near post date , users can find the edit post feature there. By clicking edit users can see post creation form, but the fields are already pre-populated with the existing post information. You can edit the desired fields and save the changes, which will return you to the post detail page and you can see that the post has been updated successfully.
 
 * **Events Page**
 
-    ![Event Page](../pythonista/src/assets/readme/eventPage.jpg)
+    ![Event Page](src/assets/readme/eventPage.jpg)
 
    The events page contains user-created events.
 
@@ -102,14 +102,14 @@
 
 * **Event Page**
 
-    ![Event Post](../pythonista/src/assets/readme/pageEvent.jpg)
+    ![Event Post](src/assets/readme/pageEvent.jpg)
 
     The features here are:
     * Ability to edit or delete event if you are the owner of the event.
 
 * **Create Event  Form**
 
-    ![Create Event Page](../pythonista/src/assets/readme/eventForm.jpg)
+    ![Create Event Page](src/assets/readme/eventForm.jpg)
 
     If you are logged in, you are able to share new events with the community. By clicking on the Add Event menu option in the Navigation Bar, you are taken to the Share a New Event page, where you can submit the event creation form to the API.
     Create Event Form consist of event picture, title, description, event date, start time, end time, location and organizer.
@@ -117,7 +117,7 @@
 
 * **Edit Event Form**
 
-    ![Edit Event Page](../pythonista/src/assets/readme/editEvent.jpg)
+    ![Edit Event Page](src/assets/readme/editEvent.jpg)
 
     By clicking Edit, you are taken back to the event creation form, but the fields are already pre-populated with the existing event information. You can edit the desired fields and save the changes, which will return you to the event detail page and you can see that the event has been updated successfully.
 
@@ -126,12 +126,12 @@
    The Create Event Form is validated to determine that users are not able to add an event in the past; if users add an event date in the past, the form will raise an error that the event cannot be in the past. It will avoid entering the wrong date.
 
 
-    ![Event Date](../pythonista/src/assets/readme/eventDate.jpg)
+    ![Event Date](src/assets/readme/eventDate.jpg)
 
 
 * **Profile Page**
 
-    ![Profile Page](../pythonista/src/assets/readme/profilePage.jpg)
+    ![Profile Page](src/assets/readme/profilePage.jpg)
 
     The profile page consists conists of the selected user's profile - either your own via the navbar, or other users via clicking on their profile images.
 
@@ -145,7 +145,7 @@
 
 * **Edit Profile Page**
 
-    ![Edit Profile Page](../pythonista/src/assets/readme/editProfile.jpg)
+    ![Edit Profile Page](src/assets/readme/editProfile.jpg)
 
     By clicking the Edit Profile option, they are taken to a new page containing the full profile details form to fill in and submit. Here, they can add their own avatar image, bio, GitHub, website address and LinkedIn.
 
@@ -155,13 +155,13 @@
 
 * **SignUp Page**
 
-    ![SignUp Page](../pythonista/src/assets/readme/signUp.jpg)
+    ![SignUp Page](src/assets/readme/signUp.jpg)
 
     The sign up page is only accessible if the user is logged out. This page consists of a form to be completed in order to sign up and create an account, and a link to the sign in page if the user already has an account.
 
 * **SignIn Page**
 
-    ![SignIn Page](../pythonista/src/assets/readme/signIn.jpg)
+    ![SignIn Page](src/assets/readme/signIn.jpg)
 
     The sign in page is only accessible if the user is logged out. This page consists of a form to be completed in order to sign in, and a link to the sign up page if the user does not yet have an account.
 
@@ -177,13 +177,13 @@ Enable users to post a Job or apply a Job. I was planning to implement Job featu
 here is the mock-up for Job feature:
 
 * **Job Page**
-![Job Page mock-up](../pythonista/src/assets/readme/jobPage.jpg)
+![Job Page mock-up](src/assets/readme/jobPage.jpg)
 
 * **Applying For a Job Page**
-![Apply Job Page mock-up](../pythonista/src/assets/readme/applyForm.jpg)
+![Apply Job Page mock-up](src/assets/readme/applyForm.jpg)
 
 * **Create Job Post Page**
-![Job Form Page mock-up](../pythonista/src/assets/readme/createJob.jpg)
+![Job Form Page mock-up](src/assets/readme/createJob.jpg)
 
 * **Notification Syatem:**
 Allow users to recive notification when someone leave a comment on her/his post, event post or add reaction on a post.
@@ -197,28 +197,28 @@ Seeing which users are online including links to the chat page, enabling users t
 ### _Mock-Up_
 
 * **Home Page**
-![Home Page mock-up](../pythonista/src/assets/readme/homePage.jpg)
+![Home Page mock-up](assets/readme/homePage.jpg)
 
 * **Create Post Page**
-![Create Post Form mock-up](../pythonista/src/assets/readme/createPost.jpg)
+![Create Post Form mock-up](src/assets/readme/createPost.jpg)
 
 * **Create Post Page**
-![Create Event Form mock-up](../pythonista/src/assets/readme/createEvent.jpg)
+![Create Event Form mock-up](src/assets/readme/createEvent.jpg)
 
 * **Event Page**
-![Event Page mock-up](../pythonista/src/assets/readme/event.jpg)
+![Event Page mock-up](src/assets/readme/event.jpg)
 
 * **Profile Page**
-![Profile Page](../pythonista/../pythonista/src/assets/readme/profile.jpg)
+![Profile Page](src/assets/readme/profile.jpg)
 
 * **Job Page**
-![Job Page mock-up](../pythonista/src/assets/readme/jobPage.jpg)
+![Job Page mock-up](src/assets/readme/jobPage.jpg)
 
 * **Applying For a Job Page**
-![Apply Job Page mock-up](../pythonista/src/assets/readme/applyForm.jpg)
+![Apply Job Page mock-up](src/assets/readme/applyForm.jpg)
 
 * **Create Job Post Page**
-![Job Form Page mock-up](../pythonista/src/assets/readme/createJob.jpg)
+![Job Form Page mock-up](src/assets/readme/createJob.jpg)
 
 ### _Color_
 
@@ -245,13 +245,13 @@ The Pythonista site has been passed through the W3C CSS Validator .
 * **W3C CSS Validation Results:**
  No errors or warnings were found when the code was passed through the W3C CSS Validation checker.
   
-  ![W3C CSS](../pythonista/src/assets/readme/css.jpg)
+  ![W3C CSS](src/assets/readme/css.jpg)
 
 
 ### _Automatic Testing_
 The Jest automatic tests have been written to check that the main frontend components render correctly.
 
-![W3C CSS](../pythonista/src/assets/readme/jestTest.jpg)
+![W3C CSS](src/assets/readme/jestTest.jpg)
 
 
 ### _Manual Testing_
@@ -318,14 +318,14 @@ During the testing process I also used the Responsive Design Checker website to 
 Here are the results:
 
 *  _Desktop View_
-    ![Desktop View](../pythonista/src/assets/readme/des.jpg)
+    ![Desktop View](src/assets/readme/des.jpg)
 
 *  _Tablet View_
-    ![Tablet View](../pythonista/src/assets/readme/tablet.jpg)
+    ![Tablet View](src/assets/readme/tablet.jpg)
 
 *  _Mobile View_
 
-    ![Mobile View](../pythonista/src/assets/readme/mobile.jpg)
+    ![Mobile View](src/assets/readme/mobile.jpg)
 
 
 ### _Lighthouse Testing_
