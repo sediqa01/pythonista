@@ -40,16 +40,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/events"
-      onClick={() => {
-        setToggleNavBar(!toggleNavBar);
-      }}
-      >
-      <i className="fa-solid fa-calendar-days"></i>Events
-    </NavLink>
     <NavDropdown 
         title={
           <span>
@@ -143,6 +133,16 @@ const NavBar = () => {
                   >
                 <i className="fa-solid fa-house"></i>Home
                 </NavLink>
+                <NavLink
+                    className={styles.NavLink}
+                    activeClassName={styles.Active}
+                    to="/events"
+                    onClick={() => {
+                      setToggleNavBar(!toggleNavBar);
+                    }}
+                    >
+                    <i className="fa-solid fa-calendar-days"></i>Events
+                  </NavLink>
                 {currentUser && createPostIcon}
                 {currentUser ? loggedInIcons : loggedOutIcons}
               </Nav>

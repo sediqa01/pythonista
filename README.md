@@ -1,4 +1,4 @@
-# The Pythonista
+<h1 align="center">The Pythonista</h1> 
 
   Pythonista is a social app designed for Python developers. Pythonista is a dynamic community platform for programmers to connect, share insights, and embark on collective coding journeys in a digital age where collaboration fuels innovation.
   Pythonista allows developers of all levels to easily connect to a global network of peers and a wealth of shared knowledge. Pythonista bridges the gap, fostering an ecosystem where the boundaries of code are transcended and the spirit of camaraderie reigns supreme. 
@@ -239,9 +239,95 @@ I used two google fonts for pythonista:
 
 ## Test
 
+### _Code Validation_
+The Pythonista site has been passed through the W3C CSS Validator .
+
+* **W3C CSS Validation Results:**
+ No errors or warnings were found when the code was passed through the W3C CSS Validation checker.
+  
+  ![W3C CSS](../pythonista/src/assets/readme/css.jpg)
+
+
 ### _Automatic Testing_
+The Jest automatic tests have been written to check that the main frontend components render correctly.
+
+![W3C CSS](../pythonista/src/assets/readme/jestTest.jpg)
+
+
 ### _Manual Testing_
+
+As well as the automatic tests, I carried out the following additional manual tests to check all the user story scenarios:
+
+ * **Authentication - User Logged Out**
+    1. The user can not access the following urls page, User is redirected Home:
+        * Create Post Page
+        * Edit Post Page
+        * Create Event Page
+        * Edit Event Page
+        * Edit Profiles page
+
+
+    2. Sign In/ Sign Up Page
+        * Desktop users can see an image next to the SignIn/ SignUp form.
+        * Mobile and Tablet users can't see an image next to the SignIn/ SignUp 
+        form.
+
+    3. Navigation Bar: Logged Out users can not access to the following links:
+
+        * Profile
+         * Sign Out
+    
+
+* **Post Component - LoggedIn**
+
+    * Users can Create Post
+    * Users can upload image
+    * Users can change uploaded image
+    * Users can like a Post
+    * Users can leave a comment
+    * Users of can edit/delete their own Posts
+
+
+* **Event Component - LoggedIn**
+
+    * Users can Create Event
+    * Users can upload image
+    * Users can change uploaded image
+    * Users can mark Join an Event
+    * Users can leave a conversation
+    * Users of can edit/delete their own Events
+
+
+* **Profiles - LoggedIn**
+
+    * Users can view other users profile by clicking on their avatar
+    * Users can Edit their Own profiles
+    * Users can change their Username
+    * Users can set a new password 
+    
+
+* **Following/Unfollowing - LoggedIn**
+
+    * Users can follow another users
+    * Users can unfollow another users
+
+
 ### _Responsiveness Testing_
+The responsive design tests were carried out manually throughout the build using Google Chrome Dev Tools. I based the main design around a desktop view, as this is primarily a browser based platform, although I have added responsive design for tablet and mobile devices as well.
+During the testing process I also used the Responsive Design Checker website to simulate the website on several other devices and All links, forms and pages working as expected.
+Here are the results:
+
+*  _Desktop View_
+    ![Desktop View](../pythonista/src/assets/readme/des.jpg)
+
+*  _Tablet View_
+    ![Tablet View](../pythonista/src/assets/readme/tablet.jpg)
+
+*  _Mobile View_
+
+    ![Mobile View](../pythonista/src/assets/readme/mobile.jpg)
+
+
 ### _Lighthouse Testing_
 
 
