@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import Avatar from './Avatar';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { removeTokenTimestamp } from "../utils/utils";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 
 
@@ -19,6 +20,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
       setToggleNavBar(!toggleNavBar);
     } catch (err) {
       console.log(err);

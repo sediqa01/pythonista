@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
@@ -43,6 +44,7 @@ function SignInForm() {
           /* include the signInData supplied and reroute to the URL */
           const { data } = await axios.post("dj-rest-auth/login/", signInData);
           setCurrentUser(data.user);
+          setTokenTimestamp(data);
           history.goBack();
         } catch (err) {
           /* optional chaining (?) to check if there is a an error response */
