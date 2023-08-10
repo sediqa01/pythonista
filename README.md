@@ -197,7 +197,7 @@ Seeing which users are online including links to the chat page, enabling users t
 ### _Mock-Up_
 
 * **Home Page**
-![Home Page mock-up](assets/readme/homePage.jpg)
+![Home Page mock-up](src/assets/readme/homePage.jpg)
 
 * **Create Post Page**
 ![Create Post Form mock-up](src/assets/readme/createPost.jpg)
