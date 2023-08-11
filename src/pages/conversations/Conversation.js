@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Avatar from "../../components/Avatar";
-import styles from "../../styles/Comment.module.css";
+// axios import
 import { axiosRes } from "../../api/axiosDefaults";
+// Component import
+import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import ConversationEditForm from "./ConversationEditForm";
+// CSS import
+import styles from "../../styles/Comment.module.css";
 
 const Conversation = (props) => {
   const {

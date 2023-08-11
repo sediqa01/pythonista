@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Form, Row, Col, Container } from "react-bootstrap";
-import Post from "./Post";
-import Asset from "../../components/Asset";
+// bootstrap
+import Col from "react-bootstrap/Col";	
+import Row from "react-bootstrap/Row";	
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+// css
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
+// component
+import Post from "./Post";
+import Asset from "../../components/Asset";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({message}) {
 
@@ -16,6 +23,7 @@ function PostsPage({message}) {
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
     const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -36,7 +44,7 @@ function PostsPage({message}) {
         return () => {
           clearTimeout(timer);
         };
-      }, [query, pathname]);
+      }, [query, pathname, currentUser]);
 
   return (
     <Row className="h-100">

@@ -1,22 +1,23 @@
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import {
-  Form,
-  Button,
-  Row,
-  Col,
-  Container,
-  Image,
-  Alert
- }
- from "react-bootstrap";
+// Bootstrap imports
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
+// component
 import Upload from "../../assets/upload.png";
+import Asset from "../../components/Asset";
+import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
+//css
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
-import { useRedirect } from "../../hooks/useRedirect";
+
 
 function PostCreateForm() {
   useRedirect('loggedOut')

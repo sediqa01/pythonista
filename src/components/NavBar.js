@@ -1,11 +1,17 @@
 import React from "react";
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom'
-import styles from "../styles/NavBar.module.css"
 import { Link } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
+// Bootstrap imports
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+// css
+import styles from "../styles/NavBar.module.css"
+// component
 import axios from 'axios';
 import Avatar from './Avatar';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { removeTokenTimestamp } from "../utils/utils";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 
@@ -23,7 +29,7 @@ const NavBar = () => {
       removeTokenTimestamp();
       setToggleNavBar(!toggleNavBar);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Container } from "react-bootstrap";
+//bootstrap
+import  Container  from "react-bootstrap/Container";
+import  Button  from "react-bootstrap/Button";
+//css
 import btnStyles from "../styles/Button.module.css";
 
 const CreateEventButton = ({ url, text, mobile }) => {

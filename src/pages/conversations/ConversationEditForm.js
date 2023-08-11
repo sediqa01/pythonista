@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+// bootstrap
 import Form from "react-bootstrap/Form";
+// axios
 import { axiosRes } from "../../api/axiosDefaults";
+// style
 import styles from "../../styles/Comment.module.css";
 
 function ConversationEditForm(props) {
     const { id, content, setShowEditForm, setConversation } = props;
-
     const [formContent, setFormContent] = useState(content);
 
   const handleChange = (event) => {
@@ -32,7 +34,7 @@ function ConversationEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+     // console.log(err);
     }
   };
 

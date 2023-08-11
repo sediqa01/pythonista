@@ -1,22 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
+// Bootstrap imports
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
+// axios
+import { axiosReq } from "../../api/axiosDefaults";
+// component
 import {
-    Alert,
-    Button,
-    Col,
-    Container,
-    Form,
-    Row,
-    Image,
-  } from "react-bootstrap";
-  import { axiosReq } from "../../api/axiosDefaults";
-  import {
-    useCurrentUser,
-    useSetCurrentUser,
-  } from "../../contexts/CurrentUserContext";
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
+// css
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { useRedirect } from "../../hooks/useRedirect";
+
   
   const ProfileEditForm = () => {
     useRedirect('loggedOut')

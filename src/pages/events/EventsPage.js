@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Form, Row, Col, Container } from "react-bootstrap";
+import { useLocation } from "react-router";
+// bootstrap
+import Form from "react-bootstrap/Form"
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import  Container from "react-bootstrap/Container";
+// component
 import Event from "./Event";
 import Asset from "../../components/Asset";
-import appStyles from "../../App.module.css";
-import styles from "../../styles/EventsPage.module.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { useLocation } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
 import CreateEventButton from "../../components/CreateEventButton";
 import PopularProfiles from "../profiles/PopularProfiles";
+// css
+import appStyles from "../../App.module.css";
+import styles from "../../styles/EventsPage.module.css";
+// axios
+import { axiosReq } from "../../api/axiosDefaults";
 
 function EventsPage({ message }) {
     const [events, setEvents] = useState({ results: [] });

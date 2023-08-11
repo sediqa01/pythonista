@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Col, Row, Container }from "react-bootstrap";
+// bootstrap
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import  Container from "react-bootstrap/Container";
+// css
 import appStyles from "../../App.module.css";
+// component import
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ConversationCreateForm from "../conversations/ConversationCreateForm";
 import Event from '../events/Event'

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// Bootstrap import
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+// CSS import
 import styles from "../../styles/Comment.module.css";
 import Avatar from "../../components/Avatar";
+// Axios import
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
@@ -35,7 +38,7 @@ function CommentCreateForm(props) {
       }));
       setContent("");
     } catch (err) {
-      console.log(err);
+     // console.log(err);
     }
   };
 

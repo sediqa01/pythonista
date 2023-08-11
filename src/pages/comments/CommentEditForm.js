@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-
+// Bootstrap import
 import Form from "react-bootstrap/Form";
+// CSS import
+import styles from "../../styles/Comment.module.css";
+// axios import
 import { axiosRes } from "../../api/axiosDefaults";
 
-import styles from "../../styles/Comment.module.css";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
-
   const [formContent, setFormContent] = useState(content);
-
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
@@ -34,7 +34,7 @@ function CommentEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 

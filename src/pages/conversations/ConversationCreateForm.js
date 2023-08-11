@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// bootstrap
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+// css
 import styles from "../../styles/Comment.module.css";
 import Avatar from "../../components/Avatar";
+// axios
 import { axiosRes } from "../../api/axiosDefaults";
 
 function ConversationCreateForm(props) {
@@ -34,7 +37,7 @@ function ConversationCreateForm(props) {
         }));
         setContent("");
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
   

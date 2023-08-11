@@ -1,20 +1,22 @@
 import React, {useState, useEffect} from "react";
-
+import { useParams } from "react-router-dom";
+// bootstrap
 import Col from "react-bootstrap/Col";	
 import Row from "react-bootstrap/Row";	
 import Container from "react-bootstrap/Container";	
-
+// component
 import Post from "./Post";
-import { axiosReq } from "../../api/axiosDefaults";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { useParams } from "react-router-dom";
-import appStyles from "../../App.module.css";
 import Comment from "../comments/Comment";
 import { fetchMoreData } from "../../utils/utils";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PopularProfiles from "../profiles/PopularProfiles";
+// axios
+import { axiosReq } from "../../api/axiosDefaults";
+// css
+import appStyles from "../../App.module.css";
 
 function PostPage() {
 

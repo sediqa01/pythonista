@@ -1,19 +1,22 @@
 import React from 'react'
-import styles from "../../styles/Event.module.css"
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import {
-  Card,
-  Media,
-  OverlayTrigger,
-  Tooltip,
-  Row,
-  Col } from 'react-bootstrap'
 import { Link} from "react-router-dom";
 import { useHistory} from "react-router-dom";
+// bootstrap
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Media from 'react-bootstrap/Media';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+// component
 import Avatar from "../../components/Avatar";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
-import appStyles from "../../App.module.css"
+// css
+import appStyles from "../../App.module.css";
+import styles from "../../styles/Event.module.css"
+
 
 const Event = (props) => {
     const {

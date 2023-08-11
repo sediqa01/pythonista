@@ -1,6 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
+//bootstrap
 import Dropdown from "react-bootstrap/Dropdown";
+//css
 import styles from "../styles/MoreDropdown.module.css";
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (

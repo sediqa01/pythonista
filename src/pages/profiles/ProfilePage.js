@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+// bootstrap
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Asset from "../../components/Asset";
+import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+// css
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+// component
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
-import { useParams } from "react-router";
+import Asset from "../../components/Asset";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useProfileData,
   useSetProfileData,
 } 
 from "../../contexts/ProfileDataContext";
-import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
 import Event from "../events/Event"
 import { fetchMoreData } from "../../utils/utils";
+
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);

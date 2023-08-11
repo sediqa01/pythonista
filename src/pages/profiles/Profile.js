@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+//css
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
+// component
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
-import { Link } from "react-router-dom";
+// bootstrap
 import Avatar from "../../components/Avatar";
-import { Button } from "react-bootstrap";
+import  Button  from "react-bootstrap/Button";
 
 const Profile = (props) => {
   const { profile, mobile, imageSize = 55 } = props;
