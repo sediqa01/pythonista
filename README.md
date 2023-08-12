@@ -354,20 +354,11 @@ for solving this issue, I did the following steps:
 3.  When I was working on the readme file, the screenshots of the project were not displayed in github, but they were displayed well in the preview of gitpod. This problem was in the path of the files because I had written the path of the files (../pythonista/...), which is this path in Git. The post was correct, but it was wrong on GitHub.
 
 
-Note: During development, I got lots of issues, from spelling issues up to bootstrap styling errors, API connection errors, and many component errors, which I solved by searching on Stackoverflow and other educational websites.
-I was really struggling with an Internet connection problem and have forgotten to note all the solved bugs.
-
-
-
-
-
-
-
+Note: The challenges I encountered throughout development ranged from spelling mistakes to bootstrap style faults, API connection errors, and other component errors. I was able to find solutions by looking on Stackoverflow and other educational websites.
 
 
 ### _UnSolved Bugs_
 No bugs so far.
-
 
 
 ## Technologies Used
@@ -408,6 +399,18 @@ Once you have created a new gitpod workspace and set up the new project, you are
 
 
 ## Credits
+
+1. The **Code Institute moments** walkthrough project both backend and frontend was a big guide.
+2. The Upload image on the create event, and create postis taken from pngtree.com
+3. With the help of my mentor **Adegbenga Adeye**, I added the event_date validation using date-fns.
+4. The image for not found page was taken from **Iconduck** site.
+5. In order to find a solution to a problem, I often search on the Stackoverflow.
+6. The code for create event button as link was taken from **Where Is The Mouse**, Alexa Hendry helped me to sort it out.
+    component dir > CreateEventForm.js file
+7. The Sign In / Sign yp pic created in **My Free Logo Maker** by Sediqa Talbi
+
+
+
 
 
 
