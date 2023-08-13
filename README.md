@@ -385,6 +385,19 @@ No bugs so far.
 * **date-fns -** Installed to validate event date.
 * **msw -** Mock Service Worker, Used for testing.
 
+## Components
+
+The following components have been implemented in this project and reused throughout the app:
+* Asset: Using this component, spinners are loaded throughout the site and user messages are displayed if search results are not found.
+* Avatar: Users can identify each other more easily with the help of this component, which is used throughout the site for user profile images.
+* CreateEventButton: User can create event by clicking the Create Event button on Event page, my plane was to create reusbale component that I can use button as link and use it to link the Create Event Form, Apply Button in Job Post for applying Job, as I was not able to create Job feature I used this component just for Create Event Button.
+* DropdownToggle Page: In the app, this component is used to edit posts and profiles by users/owners.
+* NavBar: This component is present on every page of the application. The user can access most site features in one place, from any 
+    page, which improves UX. It also collapses into a navbar menu for screen sizes medium and below.
+* NotFound: Invalid urls were handled by this component. If users try to input invalid urls, they will see a page not found message.
+* UseRedirect: When users access a page they shouldn't be viewing, this component redirects them to their home page.
+
+
 ## Deployment
 
 ### _Heroku_
