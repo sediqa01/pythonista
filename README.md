@@ -411,7 +411,11 @@ Once you have created a new gitpod workspace and set up the new project, you are
 
 
 
+Note: It's good to document here, I got app error at the very last min when I was cloning my frontend app with backend app, before everything was working as it should. you can find the screenshot of diffrent part of app in React README.md file in pythonista repository.
+I did automatic testing for both front app and backend app, It proves that app was wroking before cloning apps.
 
+Beside I did my very best to build a good project for pp5, as refugee I didn't have normal life like others, going from one cuntry to another. I did all the whole course in the way of finding a place to live, maybe I could do better than today's output, but the situation is beyond my contorl. I proud of myself to make it done as much as I could.
+**Thanks to everyone from CI who helped, listened, supported and understand me!**
 
 
 
